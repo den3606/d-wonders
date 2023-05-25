@@ -1,3 +1,5 @@
 noita_remover_language,english,,,,,,,,,japanese,,,,,
 action_stack_bolt,Stack bolt,,,,,,,,,スタックボルト,,,,,
 actiondesc_stack_bolt,"The more you shot, the stronger the magic.",,,,,,,,,撃てば撃つほど強いらしい…,,,,,
+action_icicle,Icicle,,,,,,,,,氷柱,,,,,
+actiondesc_icicle,The icicle can be a deadly weapon.,,,,,,,,,つららは凶器になりえます,,,,,
