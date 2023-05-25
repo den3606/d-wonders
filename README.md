@@ -1,7 +1,6 @@
-# Noita MOD Template
+# D Wonders
 
-NoitaMOD制作用のテンプレートリポジトリです。
-`noita-mod-template`を開発MOD名に変更してください。
+Den が作成したオリジナル Spell MOD です。
 
 ## LICENSE
 
