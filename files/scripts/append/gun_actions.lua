@@ -49,7 +49,7 @@ local original_actions = {{
   action = function()
     add_projectile("mods/d-wonders/files/entities/projectiles/deck/icicle.xml")
     c.fire_rate_wait = c.fire_rate_wait + 20
-    c.spread_degrees = c.spread_degrees + 7
+    c.spread_degrees = c.spread_degrees + 2
     c.damage_critical_chance = c.damage_critical_chance + 10
     c.damage_ice_add = c.damage_ice_add + 0.08
     shot_effects.recoil_knockback = shot_effects.recoil_knockback + 5
