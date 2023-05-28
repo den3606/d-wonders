@@ -1,7 +1,7 @@
 -- 特定のEnitity内にあるVariableStorageComponentへ値をセットする
 function SetInternalVariableValue(entity_id, variable_name, variable_type, new_value)
 
-  local components = EntityGetComponent(entity_id, "VariableStorageComponent")
+  local components = EntityGetComponentIncludingDisabled(entity_id, "VariableStorageComponent")
   if (components ~= nil) then
     for key, comp_id in pairs(components) do
       local var_name = ComponentGetValue2(comp_id, "name")
@@ -15,7 +15,7 @@ end
 -- 特定のEnitity内にあるVariableStorageComponentへ値を取得する
 function GetInternalVariableValue(entity_id, variable_name, variable_type)
   local value = nil
-  local components = EntityGetComponent(entity_id, "VariableStorageComponent")
+  local components = EntityGetComponentIncludingDisabled(entity_id, "VariableStorageComponent")
   if (components ~= nil) then
     for key, comp_id in pairs(components) do
       local var_name = ComponentGetValue2(comp_id, "name")
@@ -53,8 +53,8 @@ function AddNewInternalVariable(entity_id, variable_name, variable_type, initial
   end
 end
 
-function RemoveInternalVariableValue(entity_id, variable_name, variable_type)
-  local components = EntityGetComponent(entity_id, "VariableStorageComponent")
+function RemoveInternalVariableValue(entity_id, variable_name)
+  local components = EntityGetComponentIncludingDisabled(entity_id, "VariableStorageComponent")
   if (components ~= nil) then
     for key, comp_id in pairs(components) do
       local var_name = ComponentGetValue2(comp_id, "name")

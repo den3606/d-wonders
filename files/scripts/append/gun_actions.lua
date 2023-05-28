@@ -56,33 +56,24 @@ local original_actions = {{
     c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_frozen.xml,"
     c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/particles/icicle_freeze_charge.xml,"
   end,
-} -- FIXME: キャストを減らしても初回の発射時には杖のキャスト分撃たれてしまう
--- NOTE: スペル詠唱時に杖分のキャストが既に走っている？
--- {
---   id = "LAPSE_DRAW_3",
---   name = "$action_burst_3",
---   description = "$actiondesc_burst_3",
---   sprite = "data/ui_gfx/gun_actions/burst_3.png",
---   sprite_unidentified = "data/ui_gfx/gun_actions/burst_2_unidentified.png",
---   type = ACTION_TYPE_DRAW_MANY,
---   spawn_level = "0,1,2,3,4,5,6", -- BURST_2
---   spawn_probability = "0.8,0.8,0.8,0.8,0.8,0.8,0.8", -- BURST_2
---   price = 140,
---   mana = 5,
---   -- max_uses = 100,
---   action = function()
---     local drawable_count = gun.actions_per_round - 3
---     gun.actions_per_round = drawable_count
---     print(drawable_count)
---     draw_actions(drawable_count, false)
---     print(drawable_count)
---     move_discarded_to_deck()
---   end,
--- }
-}
+}, {
+  id = "DECREASE_DRAW_3",
+  name = "$action_decrease_draw_3",
+  description = "$actiondesc_decrease_draw_3",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/decrease_draw_3.png",
+  sprite_unidentified = "data/ui_gfx/gun_actions/bomb_unidentified.png",
+  type = ACTION_TYPE_PASSIVE,
+  spawn_level = "1,2,3,4,5,6",
+  spawn_probability = "0.05,0.05,0.4,0.3,0.3,0.4",
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/decrease_draw_3.xml",
+  price = 0,
+  mana = 0,
+  action = function()
+    draw_actions(1, true)
+  end,
+}}
 
 for _, action in ipairs(original_actions) do
-  print(action.id)
   table.insert(actions, action)
 end
 
