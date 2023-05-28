@@ -57,17 +57,59 @@ local original_actions = {{
     c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/particles/icicle_freeze_charge.xml,"
   end,
 }, {
+  id = "DECREASE_DRAW_2",
+  name = "$action_decrease_draw_2",
+  description = "$actiondesc_decrease_draw_2",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/decrease_draw_2.png",
+  type = ACTION_TYPE_PASSIVE,
+  spawn_level = "1,2,3,4,5,6",
+  spawn_probability = "0.05,0.05,0.4,0.6,0.6,0.4",
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/decrease_draw_2.xml",
+  price = 90,
+  mana = 0,
+  action = function()
+    draw_actions(1, true)
+  end,
+}, {
   id = "DECREASE_DRAW_3",
   name = "$action_decrease_draw_3",
   description = "$actiondesc_decrease_draw_3",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/decrease_draw_3.png",
-  sprite_unidentified = "data/ui_gfx/gun_actions/bomb_unidentified.png",
   type = ACTION_TYPE_PASSIVE,
   spawn_level = "1,2,3,4,5,6",
-  spawn_probability = "0.05,0.05,0.4,0.3,0.3,0.4",
+  spawn_probability = "0.05,0.05,0.4,0.4,0.4,0.4",
   custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/decrease_draw_3.xml",
-  price = 0,
-  mana = 0,
+  price = 100,
+  mana = 1,
+  action = function()
+    draw_actions(1, true)
+  end,
+}, {
+  id = "DECREASE_DRAW_4",
+  name = "$action_decrease_draw_4",
+  description = "$actiondesc_decrease_draw_4",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/decrease_draw_4.png",
+  type = ACTION_TYPE_PASSIVE,
+  spawn_level = "3,4,5,6",
+  spawn_probability = "0.05,0.05,0.3,0.3",
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/decrease_draw_4.xml",
+  price = 110,
+  mana = 2,
+  action = function()
+    draw_actions(1, true)
+  end,
+}, {
+  id = "DECREASE_DRAW_INFINITY",
+  name = "$action_decrease_draw_infinity",
+  description = "$actiondesc_decrease_draw_infinity",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/decrease_draw_infinity.png",
+  sprite_unidentified = "data/ui_gfx/gun_actions/bomb_unidentified.png",
+  type = ACTION_TYPE_PASSIVE,
+  spawn_level = "3,4,5,6,10",
+  spawn_probability = "0.05,0.05,0.05,0.05,0.2",
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/decrease_draw_infinity.xml",
+  price = 200,
+  mana = 10,
   action = function()
     draw_actions(1, true)
   end,
