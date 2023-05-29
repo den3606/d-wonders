@@ -113,6 +113,63 @@ local original_actions = {{
   action = function()
     draw_actions(1, true)
   end,
+}, {
+  id = "INCREASE_DRAW_2",
+  name = "$action_increase_draw_2",
+  description = "$actiondesc_increase_draw_2",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/increase_draw_2.png",
+  type = ACTION_TYPE_PASSIVE,
+  spawn_level = "1,2,3,4,5,6",
+  spawn_probability = "0.05,0.05,0.4,0.6,0.6,0.4",
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/increase_draw_2.xml",
+  price = 90,
+  mana = 0,
+  action = function()
+    draw_actions(1, true)
+  end,
+}, {
+  id = "INCREASE_DRAW_3",
+  name = "$action_increase_draw_3",
+  description = "$actiondesc_increase_draw_3",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/increase_draw_3.png",
+  type = ACTION_TYPE_PASSIVE,
+  spawn_level = "1,2,3,4,5,6",
+  spawn_probability = "0.05,0.05,0.4,0.4,0.4,0.4",
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/increase_draw_3.xml",
+  price = 100,
+  mana = 1,
+  action = function()
+    draw_actions(1, true)
+  end,
+}, {
+  id = "INCREASE_DRAW_4",
+  name = "$action_increase_draw_4",
+  description = "$actiondesc_increase_draw_4",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/increase_draw_4.png",
+  type = ACTION_TYPE_PASSIVE,
+  spawn_level = "3,4,5,6",
+  spawn_probability = "0.05,0.05,0.3,0.3",
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/increase_draw_4.xml",
+  price = 110,
+  mana = 2,
+  action = function()
+    draw_actions(1, true)
+  end,
+}, {
+  id = "INCREASE_DRAW_INFINITY",
+  name = "$action_increase_draw_infinity",
+  description = "$actiondesc_increase_draw_infinity",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/increase_draw_infinity.png",
+  sprite_unidentified = "data/ui_gfx/gun_actions/bomb_unidentified.png",
+  type = ACTION_TYPE_PASSIVE,
+  spawn_level = "3,4,5,6,10",
+  spawn_probability = "0.05,0.05,0.05,0.05,0.2",
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/increase_draw_infinity.xml",
+  price = 200,
+  mana = 10,
+  action = function()
+    draw_actions(1, true)
+  end,
 }}
 
 for _, action in ipairs(original_actions) do

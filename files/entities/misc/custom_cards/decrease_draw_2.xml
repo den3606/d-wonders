@@ -1,11 +1,11 @@
 <Entity>
   <Base file="data/entities/base_custom_card.xml">
     <SpriteComponent image_file="mods/d-wonders/files/ui_gfx/gun_actions/decrease_draw_2.png" />
-    <ItemActionComponent _tags="enabled_in_world"
+    <ItemActionComponent _tags="enabled_in_world,enabled_in_inventory"
                              action_id="DECREASE_DRAW_2" />
   </Base>
   <LuaComponent
-		_tags="enabled_in_hand"
+		_tags="enabled_in_hand,enabled_in_inventory"
 		script_enabled_changed="mods/d-wonders/files/scripts/magic/decrease_draw_2.lua"
 		execute_every_n_frame="-1"
 	 />
