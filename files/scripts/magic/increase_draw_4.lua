@@ -2,7 +2,6 @@ dofile_once("mods/d-wonders/files/scripts/lib/utilities.lua")
 local INCREASE_DRAW = dofile_once("mods/d-wonders/files/scripts/magic/increase_draw_4_statics.lua")
 
 local function add_spell_in_wand_detection(spell_entity_id)
-  print('called add_spell_in_wand_detection')
   local watch_wand_component_id = GetInternalVariableValue(spell_entity_id, INCREASE_DRAW.VARIABLE_KEYS.START_WATCH_WAND, "value_int")
   if watch_wand_component_id == nil then
     watch_wand_component_id = EntityAddComponent2(spell_entity_id, "LuaComponent", {
@@ -15,7 +14,6 @@ local function add_spell_in_wand_detection(spell_entity_id)
 end
 
 local function remove_spell_in_wand_detection(spell_entity_id)
-  print('called remove_spell_in_wand_detection')
   local watch_wand_component_id = GetInternalVariableValue(spell_entity_id, INCREASE_DRAW.VARIABLE_KEYS.START_WATCH_WAND, "value_int")
   if watch_wand_component_id then
     RemoveInternalVariableValue(spell_entity_id, INCREASE_DRAW.VARIABLE_KEYS.START_WATCH_WAND)
@@ -24,7 +22,6 @@ local function remove_spell_in_wand_detection(spell_entity_id)
 end
 
 local function add_spell_out_wand_detection(spell_entity_id)
-  print('called add_spell_out_wand_detection')
   local watch_wand_component_id = GetInternalVariableValue(spell_entity_id, INCREASE_DRAW.VARIABLE_KEYS.END_WATCH_WAND, "value_int")
   if watch_wand_component_id == nil then
     watch_wand_component_id = EntityAddComponent2(spell_entity_id, "LuaComponent", {
@@ -37,7 +34,6 @@ local function add_spell_out_wand_detection(spell_entity_id)
 end
 
 local function remove_spell_out_wand_detection(spell_entity_id)
-  print('called remove_add_spell_out_wand_detection')
   local watch_wand_component_id = GetInternalVariableValue(spell_entity_id, INCREASE_DRAW.VARIABLE_KEYS.END_WATCH_WAND, "value_int")
   if watch_wand_component_id ~= nil then
     EntityRemoveComponent(spell_entity_id, watch_wand_component_id)
