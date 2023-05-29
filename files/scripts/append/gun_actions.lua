@@ -57,6 +57,24 @@ local original_actions = {{
     c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/particles/icicle_freeze_charge.xml,"
   end,
 }, {
+  id = "HAMMER",
+  name = "$action_hammer",
+  description = "$actiondesc_hammer",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/hammer.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/hammer.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "1,2,3,4,5",
+  spawn_probability = "0.2,0.4,0.8,0.6,0.3",
+  price = 130,
+  mana = 30,
+  action = function()
+    local x, y = EntityGetTransform(GetUpdatedEntityID())
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/hammer.xml")
+    SetRandomSeed(x, y)
+    c.fire_rate_wait = c.fire_rate_wait + Random(0, 20)
+    c.spread_degrees = c.spread_degrees + Random(10, 25)
+  end,
+}, {
   id = "DECREASE_DRAW_2",
   name = "$action_decrease_draw_2",
   description = "$actiondesc_decrease_draw_2",
@@ -106,7 +124,7 @@ local original_actions = {{
   sprite_unidentified = "data/ui_gfx/gun_actions/bomb_unidentified.png",
   type = ACTION_TYPE_PASSIVE,
   spawn_level = "3,4,5,6,10",
-  spawn_probability = "0.05,0.05,0.05,0.05,0.2",
+  spawn_probability = "0.02,0.02,0.02,0.1,0.2",
   custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/decrease_draw_infinity.xml",
   price = 200,
   mana = 10,
@@ -163,7 +181,7 @@ local original_actions = {{
   sprite_unidentified = "data/ui_gfx/gun_actions/bomb_unidentified.png",
   type = ACTION_TYPE_PASSIVE,
   spawn_level = "3,4,5,6,10",
-  spawn_probability = "0.05,0.05,0.05,0.05,0.2",
+  spawn_probability = "0.02,0.02,0.02,0.1,0.2",
   custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/increase_draw_infinity.xml",
   price = 200,
   mana = 10,
