@@ -18,23 +18,42 @@ local function decrease_draw(wand_entity_id, is_enabled)
     decrease_draw_count_array = Json.decode(decrease_draw_count_array_serialized)
   end
 
+  local wand_true_capacity = GetInternalVariableValue(wand_entity_id, 'increase/decrease_draw.wand_true_capacity', 'value_int')
+  if wand_true_capacity == nil then
+    for _, ability_componet in ipairs(ability_components) do
+      wand_true_capacity = tonumber(ComponentObjectGetValue2(ability_componet, "gun_config", "actions_per_round"))
+    end
+    AddNewInternalVariable(wand_entity_id, 'increase/decrease_draw.wand_true_capacity', 'value_int', wand_true_capacity)
+  end
+
   for _, ability_componet in ipairs(ability_components) do
-    local current_wand_draw = tonumber(ComponentObjectGetValue2(ability_componet, "gun_config", "actions_per_round"))
+    local current_wand_draw = wand_true_capacity
 
     if is_enabled then
       local new_wand_draw = 1
-      local decrease_draw_count = current_wand_draw - new_wand_draw
+      local decrease_draw_count
+      if current_wand_draw > 0 then
+        decrease_draw_count = current_wand_draw - new_wand_draw
+      else
+        decrease_draw_count = new_wand_draw - current_wand_draw
+      end
+      wand_true_capacity = current_wand_draw - decrease_draw_count
       table.insert(decrease_draw_count_array, decrease_draw_count)
       ComponentObjectSetValue2(ability_componet, "gun_config", "actions_per_round", new_wand_draw)
     else
       if #decrease_draw_count_array ~= 0 then
         local decrease_draw_count = decrease_draw_count_array[#decrease_draw_count_array]
+        local new_wand_draw = current_wand_draw + decrease_draw_count
+        wand_true_capacity = new_wand_draw
         table.remove(decrease_draw_count_array)
-        ComponentObjectSetValue2(ability_componet, "gun_config", "actions_per_round", current_wand_draw + decrease_draw_count)
+        ComponentObjectSetValue2(ability_componet, "gun_config", "actions_per_round", new_wand_draw)
       end
     end
   end
 
+  print(wand_true_capacity)
+
+  SetInternalVariableValue(wand_entity_id, "increase/decrease_draw.wand_true_capacity", "value_int", wand_true_capacity)
   SetInternalVariableValue(wand_entity_id, 'decrease_draw_infinity.decrease_draw_count_array', 'value_string', Json.encode(decrease_draw_count_array))
 end
 
