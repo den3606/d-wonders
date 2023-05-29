@@ -1,13 +1,49 @@
 dofile_once("mods/d-wonders/files/scripts/lib/utilities.lua")
+local INCREASE_DRAW = dofile_once("mods/d-wonders/files/scripts/magic/increase_draw_4_statics.lua")
 
-local INCREASE_DRAW = {
-  DRAW_SIZE = 4,
-  EXECUTED_MARK_TAG = "enabled_increase_draw_4",
-  VARIABLE_KEYS = {
-    TRUE_DRAW = "increase_draw_decrease_draw.true_actions_per_round",
-    REIGSTERED_WAND_ENTITY = "increase_draw_4.target_wand_entity_id",
-  },
-}
+local function add_spell_in_wand_detection(spell_entity_id)
+  print('called add_spell_in_wand_detection')
+  local watch_wand_component_id = GetInternalVariableValue(spell_entity_id, INCREASE_DRAW.VARIABLE_KEYS.START_WATCH_WAND, "value_int")
+  if watch_wand_component_id == nil then
+    watch_wand_component_id = EntityAddComponent2(spell_entity_id, "LuaComponent", {
+      _tags = "enabled_in_hand,enabled_in_world,enabled_in_inventory",
+      script_source_file = "mods/d-wonders/files/scripts/magic/increase_draw_4_next_add_detection.lua",
+      execute_every_n_frame = 1,
+    })
+    AddNewInternalVariable(spell_entity_id, INCREASE_DRAW.VARIABLE_KEYS.START_WATCH_WAND, "value_int", watch_wand_component_id)
+  end
+end
+
+local function remove_spell_in_wand_detection(spell_entity_id)
+  print('called remove_spell_in_wand_detection')
+  local watch_wand_component_id = GetInternalVariableValue(spell_entity_id, INCREASE_DRAW.VARIABLE_KEYS.START_WATCH_WAND, "value_int")
+  if watch_wand_component_id then
+    RemoveInternalVariableValue(spell_entity_id, INCREASE_DRAW.VARIABLE_KEYS.START_WATCH_WAND)
+    EntityRemoveComponent(spell_entity_id, watch_wand_component_id)
+  end
+end
+
+local function add_spell_out_wand_detection(spell_entity_id)
+  print('called add_spell_out_wand_detection')
+  local watch_wand_component_id = GetInternalVariableValue(spell_entity_id, INCREASE_DRAW.VARIABLE_KEYS.END_WATCH_WAND, "value_int")
+  if watch_wand_component_id == nil then
+    watch_wand_component_id = EntityAddComponent2(spell_entity_id, "LuaComponent", {
+      _tags = "enabled_in_hand,enabled_in_world,enabled_in_inventory",
+      script_source_file = "mods/d-wonders/files/scripts/magic/increase_draw_4_next_remove_detection.lua",
+      execute_every_n_frame = 1,
+    })
+    AddNewInternalVariable(spell_entity_id, INCREASE_DRAW.VARIABLE_KEYS.END_WATCH_WAND, "value_int", watch_wand_component_id)
+  end
+end
+
+local function remove_spell_out_wand_detection(spell_entity_id)
+  print('called remove_add_spell_out_wand_detection')
+  local watch_wand_component_id = GetInternalVariableValue(spell_entity_id, INCREASE_DRAW.VARIABLE_KEYS.END_WATCH_WAND, "value_int")
+  if watch_wand_component_id ~= nil then
+    EntityRemoveComponent(spell_entity_id, watch_wand_component_id)
+    RemoveInternalVariableValue(spell_entity_id, INCREASE_DRAW.VARIABLE_KEYS.END_WATCH_WAND)
+  end
+end
 
 local function get_gun_config_actions_per_round_ability_component(wand_entity_id)
   if EntityHasTag(wand_entity_id, "wand") then
@@ -39,6 +75,9 @@ local function increase_actions_per_round(spell_entity_id, wand_entity_id, abili
     new_actions_per_round = 1
   end
   ComponentObjectSetValue2(ability_component, "gun_config", "actions_per_round", new_actions_per_round)
+
+  add_spell_out_wand_detection(spell_entity_id)
+  remove_spell_in_wand_detection(spell_entity_id)
 end
 
 local function decrease_actions_per_round(spell_entity_id, wand_entity_id, ability_component)
@@ -60,6 +99,9 @@ local function decrease_actions_per_round(spell_entity_id, wand_entity_id, abili
   end
 
   ComponentObjectSetValue2(ability_component, "gun_config", "actions_per_round", new_actions_per_round)
+
+  add_spell_in_wand_detection(spell_entity_id)
+  remove_spell_out_wand_detection(spell_entity_id)
 end
 
 local function when_wand_got_increase_draw(spell_entity_id)
@@ -116,3 +158,6 @@ function enabled_changed(spell_entity_id, is_enabled)
     when_let_go_of_wand(spell_entity_id)
   end
 end
+
+local spell_entity_id = GetUpdatedEntityID()
+add_spell_in_wand_detection(spell_entity_id)
