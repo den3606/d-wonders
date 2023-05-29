@@ -7,7 +7,7 @@ local function add_spell_in_wand_detection(spell_entity_id)
   if watch_wand_component_id == nil then
     watch_wand_component_id = EntityAddComponent2(spell_entity_id, "LuaComponent", {
       _tags = "enabled_in_hand,enabled_in_world,enabled_in_inventory",
-      script_source_file = "mods/d-wonders/files/scripts/magic/increase_draw_4_next_add_detection.lua",
+      script_source_file = "mods/d-wonders/files/scripts/magic/increase_draw_4_add_detection.lua",
       execute_every_n_frame = 1,
     })
     AddNewInternalVariable(spell_entity_id, INCREASE_DRAW.VARIABLE_KEYS.START_WATCH_WAND, "value_int", watch_wand_component_id)
@@ -29,7 +29,7 @@ local function add_spell_out_wand_detection(spell_entity_id)
   if watch_wand_component_id == nil then
     watch_wand_component_id = EntityAddComponent2(spell_entity_id, "LuaComponent", {
       _tags = "enabled_in_hand,enabled_in_world,enabled_in_inventory",
-      script_source_file = "mods/d-wonders/files/scripts/magic/increase_draw_4_next_remove_detection.lua",
+      script_source_file = "mods/d-wonders/files/scripts/magic/increase_draw_4_remove_detection.lua",
       execute_every_n_frame = 1,
     })
     AddNewInternalVariable(spell_entity_id, INCREASE_DRAW.VARIABLE_KEYS.END_WATCH_WAND, "value_int", watch_wand_component_id)
@@ -158,6 +158,3 @@ function enabled_changed(spell_entity_id, is_enabled)
     when_let_go_of_wand(spell_entity_id)
   end
 end
-
-local spell_entity_id = GetUpdatedEntityID()
-add_spell_in_wand_detection(spell_entity_id)
