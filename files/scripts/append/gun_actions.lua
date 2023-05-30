@@ -83,36 +83,71 @@ local original_actions = {{
   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/water_balloon.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "0,1,2,3,4",
-  spawn_probability = "0.8,0.8,0.8,0.8,0.8",
+  spawn_probability = "0.7,0.7,0.7,0.7,0.7",
   price = 100,
-  mana = 6,
+  mana = 8,
   action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/water_balloon.xml")
     add_projectile("mods/d-wonders/files/entities/projectiles/deck/water_balloon.xml")
     c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_wet.xml,"
     c.fire_rate_wait = c.fire_rate_wait + 4
   end,
-}, -- {
---   id = "LIQUID_BALLOON",
---   name = "$action_hammer",
---   description = "$actiondesc_hammer",
---   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/hammer.png",
---   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/hammer.xml"},
---   type = ACTION_TYPE_PROJECTILE,
---   spawn_level = "1,2,3,4,5",
---   spawn_probability = "0.2,0.8,0.8,0.6,0.3",
---   price = 130,
---   mana = 30,
---   max_uses = 120,
---   action = function()
--- NOTE:Enchant式のバルーン
---     local x, y = EntityGetTransform(GetUpdatedEntityID())
---     add_projectile("mods/d-wonders/files/entities/projectiles/deck/hammer.xml")
---     SetRandomSeed(x, y)
---     c.fire_rate_wait = c.fire_rate_wait + Random(0, 20)
---     c.spread_degrees = c.spread_degrees + Random(10, 25)
---   end,
--- },
-{
+}, {
+  id = "FIRE_BALLOON",
+  name = "$action_fire_balloon",
+  description = "$actiondesc_fire_balloon",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/fire_balloon.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/fire_balloon.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "0,1,2,3,4",
+  spawn_probability = "1,1,1,1,1",
+  price = 80,
+  mana = 4,
+  custom_xml_file = "data/entities/misc/custom_cards/fire_trail.xml",
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/fire_balloon.xml")
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/fire_balloon.xml")
+    c.trail_material = c.trail_material .. "fire,"
+    c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_on_fire.xml,"
+    c.fire_rate_wait = c.fire_rate_wait + 2
+  end,
+}, {
+  id = "OIL_BALLOON",
+  name = "$action_oil_balloon",
+  description = "$actiondesc_oil_balloon",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/oil_balloon.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/oil_balloon.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "0,1,2,3,4",
+  spawn_probability = "0.7,0.7,0.7,0.7,0.7",
+  price = 100,
+  mana = 8,
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/oil_balloon.xml")
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/oil_balloon.xml")
+    c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_oiled.xml,"
+    c.fire_rate_wait = c.fire_rate_wait + 4
+  end,
+}, {
+  id = "BLOOD_BALLOON",
+  name = "$action_blood_balloon",
+  description = "$actiondesc_blood_balloon",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/blood_balloon.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/blood_balloon.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "0,1,2,3,4",
+  spawn_probability = "0.1,0.1,0.2,0.2,0.3",
+  price = 120,
+  mana = 100,
+  max_uses = 5,
+  never_unlimited = true,
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/blood_balloon.xml")
+    c.trail_material = c.trail_material .. "blood,"
+    c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_bloody.xml,"
+    c.fire_rate_wait = c.fire_rate_wait + 6
+  end,
+}, {
   id = "DECREASE_DRAW_2",
   name = "$action_decrease_draw_2",
   description = "$actiondesc_decrease_draw_2",
@@ -226,7 +261,28 @@ local original_actions = {{
   action = function()
     draw_actions(1, true)
   end,
-}}
+} -- ,{
+--   id = "LIQUID_BALLOON",
+--   name = "$action_hammer",
+--   description = "$actiondesc_hammer",
+--   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/hammer.png",
+--   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/hammer.xml"},
+--   type = ACTION_TYPE_PROJECTILE,
+--   spawn_level = "1,2,3,4,5",
+--   spawn_probability = "0.2,0.8,0.8,0.6,0.3",
+--   price = 130,
+--   mana = 30,
+--   max_uses = 120,
+--   action = function()
+-- NOTE:Enchant式のバルーン
+--     local x, y = EntityGetTransform(GetUpdatedEntityID())
+--     add_projectile("mods/d-wonders/files/entities/projectiles/deck/hammer.xml")
+--     SetRandomSeed(x, y)
+--     c.fire_rate_wait = c.fire_rate_wait + Random(0, 20)
+--     c.spread_degrees = c.spread_degrees + Random(10, 25)
+--   end,
+-- },
+}
 
 for _, action in ipairs(original_actions) do
   table.insert(actions, action)
