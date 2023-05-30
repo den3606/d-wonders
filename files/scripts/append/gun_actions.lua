@@ -64,17 +64,55 @@ local original_actions = {{
   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/hammer.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "1,2,3,4,5",
-  spawn_probability = "0.2,0.4,0.8,0.6,0.3",
+  spawn_probability = "0.2,0.8,0.8,0.6,0.3",
   price = 130,
   mana = 30,
+  max_uses = 120,
   action = function()
     local x, y = EntityGetTransform(GetUpdatedEntityID())
     add_projectile("mods/d-wonders/files/entities/projectiles/deck/hammer.xml")
     SetRandomSeed(x, y)
     c.fire_rate_wait = c.fire_rate_wait + Random(0, 20)
-    c.spread_degrees = c.spread_degrees + Random(10, 25)
+    c.spread_degrees = c.spread_degrees + 6 + Random(10, 25)
   end,
 }, {
+  id = "WATER_BALLOON",
+  name = "$action_water_balloon",
+  description = "$actiondesc_water_balloon",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/water_balloon.png",
+  sprite_unidentified = "data/ui_gfx/gun_actions/arrow_unidentified.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/water_balloon.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "0,1,3,4",
+  spawn_probability = "0.8,0.8,0.8,0.8",
+  price = 120,
+  mana = 12,
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/water_balloon.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 4
+  end,
+}, -- {
+--   id = "LIQUID_BALLOON",
+--   name = "$action_hammer",
+--   description = "$actiondesc_hammer",
+--   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/hammer.png",
+--   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/hammer.xml"},
+--   type = ACTION_TYPE_PROJECTILE,
+--   spawn_level = "1,2,3,4,5",
+--   spawn_probability = "0.2,0.8,0.8,0.6,0.3",
+--   price = 130,
+--   mana = 30,
+--   max_uses = 120,
+--   action = function()
+-- NOTE:Enchant式のバルーン
+--     local x, y = EntityGetTransform(GetUpdatedEntityID())
+--     add_projectile("mods/d-wonders/files/entities/projectiles/deck/hammer.xml")
+--     SetRandomSeed(x, y)
+--     c.fire_rate_wait = c.fire_rate_wait + Random(0, 20)
+--     c.spread_degrees = c.spread_degrees + Random(10, 25)
+--   end,
+-- },
+{
   id = "DECREASE_DRAW_2",
   name = "$action_decrease_draw_2",
   description = "$actiondesc_decrease_draw_2",
