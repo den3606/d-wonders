@@ -21,3 +21,5 @@ action_decrease_draw_infinity,Decrease infinity wand castlish,,,,,,,,,無数の�
 actiondesc_decrease_draw_infinity,Decrease wand spells/casts as much as possible.,,,,,,,,,杖の同時詠唱数を可能な限り減らします,,,,,
 action_hammer,Ancient Hammer,,,,,,,,,古代のハンマー,,,,,
 actiondesc_hammer,"It's supposed to be used for construction, but some turtle seems to be throwing this",,,,,,,,,建築のお供だが、どこかの亀は投げているよう…,,,,,
+action_water_balloon,Water Balloon,,,,,,,,,水風船,,,,,
+actiondesc_water_balloon,"Launching water-filled balloons",,,,,,,,,水が入った風船を飛ばします,,,,,

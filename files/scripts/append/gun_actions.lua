@@ -80,15 +80,15 @@ local original_actions = {{
   name = "$action_water_balloon",
   description = "$actiondesc_water_balloon",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/water_balloon.png",
-  sprite_unidentified = "data/ui_gfx/gun_actions/arrow_unidentified.png",
   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/water_balloon.xml"},
   type = ACTION_TYPE_PROJECTILE,
-  spawn_level = "0,1,3,4",
-  spawn_probability = "0.8,0.8,0.8,0.8",
-  price = 120,
-  mana = 12,
+  spawn_level = "0,1,2,3,4",
+  spawn_probability = "0.8,0.8,0.8,0.8,0.8",
+  price = 100,
+  mana = 6,
   action = function()
     add_projectile("mods/d-wonders/files/entities/projectiles/deck/water_balloon.xml")
+    c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_wet.xml,"
     c.fire_rate_wait = c.fire_rate_wait + 4
   end,
 }, -- {
