@@ -1,9 +1,9 @@
 dofile_once("mods/d-wonders/files/scripts/lib/utilities.lua")
 
 local original_actions = {{
-  id = "STACK_BOLT",
-  name = "$action_stack_bolt",
-  description = "$actiondesc_stack_bolt",
+  id = "DW_STACK_BOLT",
+  name = "$action_dw_stack_bolt",
+  description = "$actiondesc_dw_stack_bolt",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/stack_bolt.png",
   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/stack_bolt_low.xml"},
   type = ACTION_TYPE_PROJECTILE,
@@ -36,9 +36,9 @@ local original_actions = {{
     shot_effects.recoil_knockback = shot_effects.recoil_knockback + 1
   end,
 }, {
-  id = "ICICLE",
-  name = "$action_icicle",
-  description = "$actiondesc_icicle",
+  id = "DW_ICICLE",
+  name = "$action_dw_icicle",
+  description = "$actiondesc_dw_icicle",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/icicle.png",
   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/icicle.xml"},
   type = ACTION_TYPE_PROJECTILE,
@@ -57,9 +57,9 @@ local original_actions = {{
     c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/particles/icicle_freeze_charge.xml,"
   end,
 }, {
-  id = "HAMMER",
-  name = "$action_hammer",
-  description = "$actiondesc_hammer",
+  id = "DW_HAMMER",
+  name = "$action_dw_hammer",
+  description = "$actiondesc_dw_hammer",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/hammer.png",
   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/hammer.xml"},
   type = ACTION_TYPE_PROJECTILE,
@@ -76,9 +76,9 @@ local original_actions = {{
     c.spread_degrees = c.spread_degrees + 6 + Random(10, 25)
   end,
 }, {
-  id = "WATER_BALLOON",
-  name = "$action_water_balloon",
-  description = "$actiondesc_water_balloon",
+  id = "DW_WATER_BALLOON",
+  name = "$action_dw_water_balloon",
+  description = "$actiondesc_dw_water_balloon",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/water_balloon.png",
   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/water_balloon.xml"},
   type = ACTION_TYPE_PROJECTILE,
@@ -93,9 +93,9 @@ local original_actions = {{
     c.fire_rate_wait = c.fire_rate_wait + 4
   end,
 }, {
-  id = "FIRE_BALLOON",
-  name = "$action_fire_balloon",
-  description = "$actiondesc_fire_balloon",
+  id = "DW_FIRE_BALLOON",
+  name = "$action_dw_fire_balloon",
+  description = "$actiondesc_dw_fire_balloon",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/fire_balloon.png",
   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/fire_balloon.xml"},
   type = ACTION_TYPE_PROJECTILE,
@@ -112,9 +112,9 @@ local original_actions = {{
     c.fire_rate_wait = c.fire_rate_wait + 2
   end,
 }, {
-  id = "OIL_BALLOON",
-  name = "$action_oil_balloon",
-  description = "$actiondesc_oil_balloon",
+  id = "DW_OIL_BALLOON",
+  name = "$action_dw_oil_balloon",
+  description = "$actiondesc_dw_oil_balloon",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/oil_balloon.png",
   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/oil_balloon.xml"},
   type = ACTION_TYPE_PROJECTILE,
@@ -129,9 +129,9 @@ local original_actions = {{
     c.fire_rate_wait = c.fire_rate_wait + 4
   end,
 }, {
-  id = "BLOOD_BALLOON",
-  name = "$action_blood_balloon",
-  description = "$actiondesc_blood_balloon",
+  id = "DW_BLOOD_BALLOON",
+  name = "$action_dw_blood_balloon",
+  description = "$actiondesc_dw_blood_balloon",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/blood_balloon.png",
   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/blood_balloon.xml"},
   type = ACTION_TYPE_PROJECTILE,
@@ -148,9 +148,9 @@ local original_actions = {{
     c.fire_rate_wait = c.fire_rate_wait + 6
   end,
 }, {
-  id = "DECREASE_DRAW_2",
-  name = "$action_decrease_draw_2",
-  description = "$actiondesc_decrease_draw_2",
+  id = "DW_DECREASE_DRAW_2",
+  name = "$action_dw_decrease_draw_2",
+  description = "$actiondesc_dw_decrease_draw_2",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/decrease_draw_2.png",
   type = ACTION_TYPE_PASSIVE,
   spawn_level = "1,2,3,4,5,6",
@@ -162,9 +162,9 @@ local original_actions = {{
     draw_actions(1, true)
   end,
 }, {
-  id = "DECREASE_DRAW_3",
-  name = "$action_decrease_draw_3",
-  description = "$actiondesc_decrease_draw_3",
+  id = "DW_DECREASE_DRAW_3",
+  name = "$action_dw_decrease_draw_3",
+  description = "$actiondesc_dw_decrease_draw_3",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/decrease_draw_3.png",
   type = ACTION_TYPE_PASSIVE,
   spawn_level = "1,2,3,4,5,6",
@@ -176,9 +176,9 @@ local original_actions = {{
     draw_actions(1, true)
   end,
 }, {
-  id = "DECREASE_DRAW_4",
-  name = "$action_decrease_draw_4",
-  description = "$actiondesc_decrease_draw_4",
+  id = "DW_DECREASE_DRAW_4",
+  name = "$action_dw_decrease_draw_4",
+  description = "$actiondesc_dw_decrease_draw_4",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/decrease_draw_4.png",
   type = ACTION_TYPE_PASSIVE,
   spawn_level = "3,4,5,6",
@@ -190,9 +190,9 @@ local original_actions = {{
     draw_actions(1, true)
   end,
 }, {
-  id = "DECREASE_DRAW_INFINITY",
-  name = "$action_decrease_draw_infinity",
-  description = "$actiondesc_decrease_draw_infinity",
+  id = "DW_DECREASE_DRAW_INFINITY",
+  name = "$action_dw_decrease_draw_infinity",
+  description = "$actiondesc_dw_decrease_draw_infinity",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/decrease_draw_infinity.png",
   sprite_unidentified = "data/ui_gfx/gun_actions/bomb_unidentified.png",
   type = ACTION_TYPE_PASSIVE,
@@ -205,9 +205,9 @@ local original_actions = {{
     draw_actions(1, true)
   end,
 }, {
-  id = "INCREASE_DRAW_2",
-  name = "$action_increase_draw_2",
-  description = "$actiondesc_increase_draw_2",
+  id = "DW_INCREASE_DRAW_2",
+  name = "$action_dw_increase_draw_2",
+  description = "$actiondesc_dw_increase_draw_2",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/increase_draw_2.png",
   type = ACTION_TYPE_PASSIVE,
   spawn_level = "1,2,3,4,5,6",
@@ -219,9 +219,9 @@ local original_actions = {{
     draw_actions(1, true)
   end,
 }, {
-  id = "INCREASE_DRAW_3",
-  name = "$action_increase_draw_3",
-  description = "$actiondesc_increase_draw_3",
+  id = "DW_INCREASE_DRAW_3",
+  name = "$action_dw_increase_draw_3",
+  description = "$actiondesc_dw_increase_draw_3",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/increase_draw_3.png",
   type = ACTION_TYPE_PASSIVE,
   spawn_level = "1,2,3,4,5,6",
@@ -233,9 +233,9 @@ local original_actions = {{
     draw_actions(1, true)
   end,
 }, {
-  id = "INCREASE_DRAW_4",
-  name = "$action_increase_draw_4",
-  description = "$actiondesc_increase_draw_4",
+  id = "DW_INCREASE_DRAW_4",
+  name = "$action_dw_increase_draw_4",
+  description = "$actiondesc_dw_increase_draw_4",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/increase_draw_4.png",
   type = ACTION_TYPE_PASSIVE,
   spawn_level = "3,4,5,6",
@@ -247,9 +247,9 @@ local original_actions = {{
     draw_actions(1, true)
   end,
 }, {
-  id = "INCREASE_DRAW_INFINITY",
-  name = "$action_increase_draw_infinity",
-  description = "$actiondesc_increase_draw_infinity",
+  id = "DW_INCREASE_DRAW_INFINITY",
+  name = "$action_dw_increase_draw_infinity",
+  description = "$actiondesc_dw_increase_draw_infinity",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/increase_draw_infinity.png",
   sprite_unidentified = "data/ui_gfx/gun_actions/bomb_unidentified.png",
   type = ACTION_TYPE_PASSIVE,
@@ -262,9 +262,9 @@ local original_actions = {{
     draw_actions(1, true)
   end,
 } -- ,{
---   id = "LIQUID_BALLOON",
---   name = "$action_hammer",
---   description = "$actiondesc_hammer",
+--   id = "DW_LIQUID_BALLOON",
+--   name = "$action_dw_hammer",
+--   description = "$actiondesc_dw_hammer",
 --   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/hammer.png",
 --   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/hammer.xml"},
 --   type = ACTION_TYPE_PROJECTILE,
