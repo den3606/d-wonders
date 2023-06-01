@@ -56,7 +56,7 @@
 			audio_event_name="explosions/tnt"
 			max_durability_to_destroy="11"
 			>
-      		</config_explosion>
+    </config_explosion>
   </ProjectileComponent>
   <SpriteComponent
     _enabled="1"
@@ -94,6 +94,11 @@
                             emit_cosmetic_particles="1"
                             create_real_particles="0"
                             is_emitting="1" />
+  <AudioLoopComponent
+    file="data/audio/Desktop/projectiles.bank"
+    event_name="projectiles/fuse_burn_fast"
+    auto_play="1">
+</AudioLoopComponent>
   <VariableStorageComponent
 		name="projectile_file"
 		value_string="mods/d-wonders/files/entities/projectiles/deck/mouse_fireworks.xml"
