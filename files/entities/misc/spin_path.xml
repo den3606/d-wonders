@@ -1,0 +1,8 @@
+<Entity>
+  <LuaComponent
+		_tags="spin_path"
+		script_source_file="mods/d-wonders/files/scripts/projectiles/spin_path.lua"
+		execute_every_n_frame="4"
+		>
+	</LuaComponent>
+</Entity>

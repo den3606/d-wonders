@@ -1,0 +1,16 @@
+<Sprite filename="mods/d-wonders/files/projectiles_gfx/mouse_fireworks.png"
+        offset_x="8"
+        offset_y="5"
+        default_animation="fireball" >
+  <RectAnimation
+    name="fireball"
+    pos_x="0"
+    pos_y="0"
+    frame_count="6"
+    frame_width="16"
+    frame_height="10"
+    frames_per_row="6"
+    frame_wait="0.02"
+    loop="1">
+  </RectAnimation>
+</Sprite>
