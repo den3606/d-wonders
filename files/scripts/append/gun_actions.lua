@@ -67,13 +67,32 @@ local original_actions = {{
   spawn_probability = "0.2,0.8,0.8,0.6,0.3",
   price = 130,
   mana = 30,
-  max_uses = 120,
+  max_uses = 99,
   action = function()
     local x, y = EntityGetTransform(GetUpdatedEntityID())
     add_projectile("mods/d-wonders/files/entities/projectiles/deck/hammer.xml")
     SetRandomSeed(x, y)
     c.fire_rate_wait = c.fire_rate_wait + Random(0, 20)
     c.spread_degrees = c.spread_degrees + 6 + Random(10, 25)
+  end,
+}, {
+  id = "DW_SCYTHE",
+  name = "$action_dw_scythe",
+  description = "$actiondesc_dw_scythe",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/scythe.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/scythe.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "1,2,3,4,5",
+  spawn_probability = "0.4,0.8,0.8,0.6,0.4",
+  price = 110,
+  mana = 25,
+  max_uses = 120,
+  action = function()
+    local x, y = EntityGetTransform(GetUpdatedEntityID())
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/scythe.xml")
+    SetRandomSeed(x, y)
+    c.fire_rate_wait = c.fire_rate_wait + Random(0, 15)
+    c.spread_degrees = c.spread_degrees + 6 + Random(5, 15)
   end,
 }, {
   id = "DW_WATER_BALLOON",
