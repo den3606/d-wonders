@@ -281,6 +281,24 @@ local original_actions = {{
     c.speed_multiplier = c.speed_multiplier * 0.32
     c.fire_rate_wait = c.fire_rate_wait + 10
   end,
+}, {
+  id = "DW_CANNON_BALL",
+  name = "$action_dw_cannon_ball",
+  description = "$actiondesc_dw_cannon_ball",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/cannon_ball.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/cannon_ball.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "2,3,4,5,6",
+  spawn_probability = "0.4,0.5,0.8,1,0.7",
+  price = 180,
+  mana = 120,
+  max_uses = 10,
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/cannon_ball_seed.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 60
+    current_reload_time = current_reload_time + 30
+    c.screenshake = c.screenshake + 10
+  end,
 } -- ,{
 --   id = "DW_LIQUID_BALLOON",
 --   name = "$action_dw_hammer",
