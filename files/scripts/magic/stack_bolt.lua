@@ -1,6 +1,7 @@
 dofile_once("data/scripts/lib/utilities.lua")
 dofile_once("mods/d-wonders/files/scripts/lib/utilities.lua")
 
+local HOLD_FRAME_SIZE = 120
 local projectile_entity_id = GetUpdatedEntityID()
 local who_shot
 
@@ -23,7 +24,7 @@ if stack_count == nil or started_frame == nil then
   AddNewInternalVariable(who_shot, 'stack_bolt_started_frame', 'value_int', started_frame)
 end
 
-if GameGetFrameNum() - started_frame > 90 then
+if GameGetFrameNum() - started_frame > HOLD_FRAME_SIZE then
   stack_count = 1
 end
 
