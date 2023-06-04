@@ -247,7 +247,7 @@ local original_actions = {{
     shot_effects.recoil_knockback = 160.0
   end,
 }, {
-  id = "SPIN_PATH",
+  id = "DW_SPIN_PATH",
   name = "$action_dw_spin_path",
   description = "$actiondesc_dw_spin_path",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/spin_path.png",
