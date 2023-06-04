@@ -208,6 +208,45 @@ local original_actions = {{
     c.fire_rate_wait = c.fire_rate_wait + 6
   end,
 }, {
+  id = "DW_MOUSE_FIREWORKS",
+  name = "$action_dw_mouse_fireworks",
+  description = "$actiondesc_dw_mouse_fireworks",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/mouse_fireworks.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/mouse_fireworks.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "1,2,3,4,5",
+  spawn_probability = "1,1,1,0.8,0.3",
+  price = 150,
+  mana = 60,
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/mouse_fireworks.xml")
+    c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/misc/accelerating_shot_mouse_fireworks.xml,"
+    c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/misc/spin_path.xml,"
+    c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/misc/floating_mouse_fireworks.xml,"
+    c.trail_material = c.trail_material .. "gunpowder_unstable,"
+    c.speed_multiplier = c.speed_multiplier * 0.32
+    c.fire_rate_wait = c.fire_rate_wait + 10
+  end,
+}, {
+  id = "DW_CANNON_BALL",
+  name = "$action_dw_cannon_ball",
+  description = "$actiondesc_dw_cannon_ball",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/cannon_ball.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/cannon_ball.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "2,3,4,5,6",
+  spawn_probability = "0.4,0.5,0.8,1,0.7",
+  price = 180,
+  mana = 120,
+  max_uses = 10,
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/cannon_ball_seed.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 60
+    current_reload_time = current_reload_time + 30
+    c.screenshake = c.screenshake + 20
+    shot_effects.recoil_knockback = 160.0
+  end,
+}, {
   id = "DW_DECREASE_DRAW_2",
   name = "$action_dw_decrease_draw_2",
   description = "$actiondesc_dw_decrease_draw_2",
@@ -321,46 +360,7 @@ local original_actions = {{
   action = function()
     draw_actions(1, true)
   end,
-}, {
-  id = "DW_MOUSE_FIREWORKS",
-  name = "$action_dw_mouse_fireworks",
-  description = "$actiondesc_dw_mouse_fireworks",
-  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/mouse_fireworks.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/mouse_fireworks.xml"},
-  type = ACTION_TYPE_PROJECTILE,
-  spawn_level = "1,2,3,4,5",
-  spawn_probability = "1,1,1,0.8,0.3",
-  price = 150,
-  mana = 60,
-  action = function()
-    add_projectile("mods/d-wonders/files/entities/projectiles/deck/mouse_fireworks.xml")
-    c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/misc/accelerating_shot_mouse_fireworks.xml,"
-    c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/misc/spin_path.xml,"
-    c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/misc/floating_mouse_fireworks.xml,"
-    c.trail_material = c.trail_material .. "gunpowder_unstable,"
-    c.speed_multiplier = c.speed_multiplier * 0.32
-    c.fire_rate_wait = c.fire_rate_wait + 10
-  end,
-}, {
-  id = "DW_CANNON_BALL",
-  name = "$action_dw_cannon_ball",
-  description = "$actiondesc_dw_cannon_ball",
-  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/cannon_ball.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/cannon_ball.xml"},
-  type = ACTION_TYPE_PROJECTILE,
-  spawn_level = "2,3,4,5,6",
-  spawn_probability = "0.4,0.5,0.8,1,0.7",
-  price = 180,
-  mana = 120,
-  max_uses = 10,
-  action = function()
-    add_projectile("mods/d-wonders/files/entities/projectiles/deck/cannon_ball_seed.xml")
-    c.fire_rate_wait = c.fire_rate_wait + 60
-    current_reload_time = current_reload_time + 30
-    c.screenshake = c.screenshake + 20
-    shot_effects.recoil_knockback = 160.0
-  end,
-} -- ,{
+}-- ,{
 --   id = "DW_LIQUID_BALLOON",
 --   name = "$action_dw_hammer",
 --   description = "$actiondesc_dw_hammer",
