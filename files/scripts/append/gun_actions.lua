@@ -247,6 +247,22 @@ local original_actions = {{
     shot_effects.recoil_knockback = 160.0
   end,
 }, {
+  id = "SPIN_PATH",
+  name = "$action_dw_spin_path",
+  description = "$actiondesc_dw_spin_path",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/spin_path.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/spin_path.xml"},
+  type = ACTION_TYPE_MODIFIER,
+  spawn_level = "2,4,6",
+  spawn_probability = "0.5,0.5,0.5",
+  price = 20,
+  mana = 0,
+  action = function()
+    c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/misc/spin_path.xml,"
+    c.lifetime_add = c.lifetime_add + 15
+    draw_actions(1, true)
+  end,
+}, {
   id = "DW_DECREASE_DRAW_2",
   name = "$action_dw_decrease_draw_2",
   description = "$actiondesc_dw_decrease_draw_2",
@@ -360,7 +376,7 @@ local original_actions = {{
   action = function()
     draw_actions(1, true)
   end,
-}-- ,{
+} -- ,{
 --   id = "DW_LIQUID_BALLOON",
 --   name = "$action_dw_hammer",
 --   description = "$actiondesc_dw_hammer",

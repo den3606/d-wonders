@@ -1,3 +1,8 @@
 {
-  "Lua.diagnostics.globals": ["actions", "NULL_ENTITY", "print_error"]
+  "Lua.diagnostics.globals": [
+    "actions",
+    "NULL_ENTITY",
+    "print_error",
+    "ACTION_TYPE_MODIFIER"
+  ]
 }
