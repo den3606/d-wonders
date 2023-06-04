@@ -33,7 +33,7 @@
     bounces_left="0"
     collide_with_shooter_frames="6"
 		friendly_fire="0"
-    damage="1"
+    damage="3"
     muzzle_flash_file=""
     shoot_light_flash_radius="60"
 		shoot_light_flash_r="255"
@@ -82,8 +82,8 @@
     alpha="1"
     image_file="mods/d-wonders/files/projectiles_gfx/charge_bolt.xml"
     next_rect_animation=""
-    rect_animation=""
     additive="1"
+    emissive="1"
      >
   </SpriteComponent>
   <ParticleEmitterComponent

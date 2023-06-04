@@ -42,18 +42,18 @@ local original_actions = {{
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/charge_bolt.png",
   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/charge_bolt.xml"},
   type = ACTION_TYPE_PROJECTILE,
-  spawn_level = "0,1,2,3,4",
-  spawn_probability = "0.2,0.2,0.7,0.7,0.6",
-  price = 150,
-  mana = 2,
+  spawn_level = "1,2,3,4,5",
+  spawn_probability = "0.05,0.6,1,0.8,0.3",
+  price = 160,
+  mana = 15,
   action = function()
+    c.fire_rate_wait = c.fire_rate_wait + 10
+    current_reload_time = current_reload_time + 15
     local MAX_CHARGE_SIZE = 5
-
     local player_entity_id = GetPlayerEntity()
     if player_entity_id == nil then
       return
     end
-
     local charge_count = GetInternalVariableValue(player_entity_id, 'charge_bolt_count', 'value_int')
 
     if charge_count == nil then
@@ -62,23 +62,19 @@ local original_actions = {{
     end
 
     if charge_count >= MAX_CHARGE_SIZE then
-      c.damage_projectile_add = c.damage_projectile_add + 5
+      c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/projectiles/deck/charge_bolt_area_damage.xml,"
+      c.screenshake = c.screenshake + 20
+      c.damage_critical_chance = c.damage_critical_chance + 10
       add_projectile("mods/d-wonders/files/entities/projectiles/deck/charge_bolt.xml")
       charge_count = 1
     else
       c.damage_projectile_add = 0
       add_projectile("mods/d-wonders/files/entities/projectiles/deck/charge_bolt_charging.xml")
+      c.screenshake = c.screenshake + charge_count * 2
       charge_count = charge_count + 1
     end
 
-    GamePrint(tostring(charge_count))
-
     SetInternalVariableValue(player_entity_id, 'charge_bolt_count', 'value_int', charge_count)
-
-    -- c.fire_rate_wait = c.fire_rate_wait + 6
-    -- c.screenshake = c.screenshake + 0.5
-    -- c.spread_degrees = c.spread_degrees - 2
-    -- shot_effects.recoil_knockback = shot_effects.recoil_knockback + 1
   end,
 }, {
   id = "DW_ICICLE",
