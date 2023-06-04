@@ -263,6 +263,24 @@ local original_actions = {{
     draw_actions(1, true)
   end,
 }, {
+  id = "DW_BATTERY_LIGHT",
+  name = "$action_battery_light",
+  description = "$actiondesc_battery_light",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/battery_light.png",
+  related_extra_entities = {"mods/d-wonders/files/entities/misc/battery_light.xml"},
+  type = ACTION_TYPE_MODIFIER,
+  spawn_level = "0,1,2,3,4",
+  spawn_probability = "1,0.8,0.6,0.4,0.2",
+  price = 40,
+  mana = 2,
+  max_uses = 60,
+  never_unlimited = true,
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/battery_light.xml",
+  action = function()
+    c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/misc/battery_light.xml,"
+    draw_actions(1, true)
+  end,
+}, {
   id = "DW_DECREASE_DRAW_2",
   name = "$action_dw_decrease_draw_2",
   description = "$actiondesc_dw_decrease_draw_2",

@@ -1,0 +1,18 @@
+<Entity>
+  <Base file="data/entities/base_custom_card.xml">
+    <SpriteComponent image_file="mods/d-wonders/files/ui_gfx/gun_actions/battery_light.png" />
+    <ItemActionComponent _tags="enabled_in_hand,enabled_in_inventory"
+                             action_id="BATTERY_LIGHT" />
+  </Base>
+  <LuaComponent
+		_tags="enabled_in_hand,enabled_in_world,enabled_in_inventory"
+		script_source_file="mods/d-wonders/files/scripts/magic/battery_light.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+  <VariableStorageComponent
+		name="battery_light.is_battery_unlimited"
+		value_bool="false"
+		>
+	</VariableStorageComponent>
+</Entity>
