@@ -281,6 +281,46 @@ local original_actions = {{
     draw_actions(1, true)
   end,
 }, {
+  id = "DW_DAMAGE_REVERSER_ICE",
+  name = "$action_dw_damage_reverser_ice",
+  description = "$actiondesc_dw_damage_reverser_ice",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/damage_reverser_ice.png",
+  related_extra_entities = {"mods/d-wonders/files/entities/misc/damage_reverser_ice.xml"},
+  type = ACTION_TYPE_MODIFIER,
+  spawn_level = "1,2,3,4",
+  spawn_probability = "0.1,0.1,0.1,0.1",
+  price = 150,
+  mana = 20,
+  max_uses = 5,
+  never_unlimited = true,
+  action = function()
+    local ice_damage = c.damage_ice_add
+    c.damage_ice_add = 0
+    c.damage_healing_add = -ice_damage
+    local before_extra_entities = Split(c.extra_entities, ",")
+    local after_extra_entities = {}
+    for _, extra_entity in ipairs(before_extra_entities) do
+      if not string.find(extra_entity, "freeze_charge%.xml") then
+        table.insert(after_extra_entities, extra_entity)
+      end
+    end
+    c.extra_entities = table.concat(after_extra_entities, ",")
+    print('sadsadasdasdasd')
+    print(c.extra_entities)
+
+    local before_effect_entities = Split(c.game_effect_entities, ",")
+    local after_effect_entities = {}
+    for _, effect_entity in ipairs(before_effect_entities) do
+      if not string.find(effect_entity, "effect_frozen%.xml") then
+        table.insert(after_effect_entities, effect_entity)
+      end
+    end
+    c.game_effect_entities = table.concat(after_effect_entities, ",")
+    print('sadsadasdasdadsadsdasdasdasdassd')
+    print(c.game_effect_entities)
+    draw_actions(1, true)
+  end,
+}, {
   id = "DW_DECREASE_DRAW_2",
   name = "$action_dw_decrease_draw_2",
   description = "$actiondesc_dw_decrease_draw_2",
