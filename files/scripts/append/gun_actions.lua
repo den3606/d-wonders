@@ -264,8 +264,8 @@ local original_actions = {{
   end,
 }, {
   id = "DW_BATTERY_LIGHT",
-  name = "$action_battery_light",
-  description = "$actiondesc_battery_light",
+  name = "$action_dw_battery_light",
+  description = "$actiondesc_dw_battery_light",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/battery_light.png",
   related_extra_entities = {"mods/d-wonders/files/entities/misc/battery_light.xml"},
   type = ACTION_TYPE_MODIFIER,
