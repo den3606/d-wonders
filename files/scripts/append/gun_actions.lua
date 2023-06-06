@@ -449,7 +449,22 @@ local original_actions = {{
   action = function()
     draw_actions(1, true)
   end,
-} -- ,{
+} -- {
+--   id = "DW_ANGULAR_BOLT",
+--   name = "$action_angular_bolt",
+--   description = "$actiondesc_angular_bolt",
+--   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/angular_bolt.png",
+--   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/angular_bolt.xml"},
+--   type = ACTION_TYPE_PROJECTILE,
+--   spawn_level = "1,2,3,4,5",
+--   spawn_probability = "0.5,1,1,1,1",
+--   price = 120,
+--   mana = 40,
+--   action = function()
+--     add_projectile("mods/d-wonders/files/entities/projectiles/deck/angular_bolt.xml")
+--     c.fire_rate_wait = c.fire_rate_wait + 25
+--   end,
+-- }, {
 --   id = "DW_LIQUID_BALLOON",
 --   name = "$action_dw_hammer",
 --   description = "$actiondesc_dw_hammer",
