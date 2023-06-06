@@ -262,6 +262,22 @@ local original_actions = {{
     c.fire_rate_wait = c.fire_rate_wait + 25
   end,
 }, {
+  id = "DW_POISON_FLASK",
+  name = "$action_poison_flask",
+  description = "$actiondesc_poison_flask",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/poison_flask.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/poison_flask.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "0,1,2,3",
+  spawn_probability = "1,1,1,1",
+  price = 130,
+  mana = 40,
+  max_uses = 40,
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/poison_flask.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 15
+  end,
+}, {
   id = "DW_SPIN_PATH",
   name = "$action_dw_spin_path",
   description = "$actiondesc_dw_spin_path",
