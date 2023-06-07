@@ -295,6 +295,24 @@ local original_actions = {{
     c.spread_degrees = c.spread_degrees - 5.0
   end,
 }, {
+  id = "DW_HEMOKINESIS",
+  name = "$action_dw_hemokinesis",
+  description = "$actiondesc_dw_hemokinesis",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/hemokinesis.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/hemokinesis.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "1,3,4,5",
+  spawn_probability = "0.8,0.8,1,1",
+  price = 130,
+  mana = 5,
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/hemokinesis.xml")
+    c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/misc/hemokinesis.xml,"
+    c.spread_degrees = c.spread_degrees + 2.0
+    c.fire_rate_wait = c.fire_rate_wait - 10
+    c.damage_critical_chance = c.damage_critical_chance + 10
+  end,
+}, {
   id = "DW_SPIN_PATH",
   name = "$action_dw_spin_path",
   description = "$actiondesc_dw_spin_path",
