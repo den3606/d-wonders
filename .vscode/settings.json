@@ -3,6 +3,7 @@
     "actions",
     "NULL_ENTITY",
     "print_error",
-    "ACTION_TYPE_MODIFIER"
+    "ACTION_TYPE_MODIFIER",
+    "Entitykill"
   ]
 }

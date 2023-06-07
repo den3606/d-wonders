@@ -278,6 +278,23 @@ local original_actions = {{
     c.fire_rate_wait = c.fire_rate_wait + 15
   end,
 }, {
+  id = "DW_CHARGE_PROJECTILE",
+  name = "$action_charge_projectile",
+  description = "$actiondesc_charge_projectile",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/charge_projectile.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/charge_projectile.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "0,1,2,4,5,6",
+  spawn_probability = "0.8,0.7,0.6,0.5,0.2,0.2",
+  price = 120,
+  mana = 15,
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/charge_projectile.xml")
+    c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/misc/charge_projectile.xml,"
+    c.fire_rate_wait = c.fire_rate_wait + 6
+    c.spread_degrees = c.spread_degrees - 5.0
+  end,
+}, {
   id = "DW_SPIN_PATH",
   name = "$action_dw_spin_path",
   description = "$actiondesc_dw_spin_path",
