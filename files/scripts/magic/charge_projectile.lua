@@ -4,12 +4,10 @@ local projectile_entity_id = GetUpdatedEntityID()
 if not EntityHasTag(projectile_entity_id, "dw_charge_projectile") then
   return
 end
-
 local velocity_component_id = EntityGetFirstComponent(projectile_entity_id, "VelocityComponent")
 if velocity_component_id == nil then
   return
 end
-
 local projectile_component_id = EntityGetFirstComponent(projectile_entity_id, "ProjectileComponent")
 if projectile_component_id == nil then
   return
@@ -31,4 +29,4 @@ if character_data_component == nil then
 end
 
 ComponentSetValue2(character_data_component, "mVelocity", vel_x, vel_y)
-Entitykill(projectile_entity_id)
+EntityKill(projectile_entity_id)
