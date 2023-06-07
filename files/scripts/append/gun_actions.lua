@@ -248,8 +248,8 @@ local original_actions = {{
   end,
 }, {
   id = "DW_LASER_BOLT",
-  name = "$action_laser_bolt",
-  description = "$actiondesc_laser_bolt",
+  name = "$action_dw_laser_bolt",
+  description = "$actiondesc_dw_laser_bolt",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/laser_bolt.png",
   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/laser_bolt.xml"},
   type = ACTION_TYPE_PROJECTILE,
@@ -263,8 +263,8 @@ local original_actions = {{
   end,
 }, {
   id = "DW_POISON_FLASK",
-  name = "$action_poison_flask",
-  description = "$actiondesc_poison_flask",
+  name = "$action_dw_poison_flask",
+  description = "$actiondesc_dw_poison_flask",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/poison_flask.png",
   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/poison_flask.xml"},
   type = ACTION_TYPE_PROJECTILE,
@@ -279,8 +279,8 @@ local original_actions = {{
   end,
 }, {
   id = "DW_CHARGE_PROJECTILE",
-  name = "$action_charge_projectile",
-  description = "$actiondesc_charge_projectile",
+  name = "$action_dw_charge_projectile",
+  description = "$actiondesc_dw_charge_projectile",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/charge_projectile.png",
   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/charge_projectile.xml"},
   type = ACTION_TYPE_PROJECTILE,
