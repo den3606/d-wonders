@@ -428,8 +428,8 @@ local original_actions = {{
   description = "$actiondesc_dw_spell_vacuum",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/spell_vacuum.png",
   type = ACTION_TYPE_OTHER,
-  spawn_level = "4,5,6,10",
-  spawn_probability = "0.1,0.1,0.1,0.3",
+  spawn_level = "3,4,5,6,10",
+  spawn_probability = "0.1,0.3,0.6,0.6,1",
   price = 250,
   mana = 15,
   action = function()
@@ -457,6 +457,28 @@ local original_actions = {{
       end
       c.speed_multiplier = c.speed_multiplier + (projectile_nxml_element.attr["speed_max"] or 0)
       c.lifetime_add = c.lifetime_add + (projectile_nxml_element.attr["lifetime"] or 0)
+
+      local damage_by_type_nxml_element = projectile_nxml_element:first_of("damage_by_type")
+      if damage_by_type_nxml_element ~= nil then
+        local slice_damage = damage_by_type_nxml_element.attr["slice"] or 0
+        local curse_damage = damage_by_type_nxml_element.attr["curse"] or 0
+        local projectile_damage = damage_by_type_nxml_element.attr["projectile"] or 0
+        local melee_damage = damage_by_type_nxml_element.attr["melee"] or 0
+        local ice_damage = damage_by_type_nxml_element.attr["ice"] or 0
+        local electricity_damage = damage_by_type_nxml_element.attr["electricity"] or 0
+        local fire_damage = damage_by_type_nxml_element.attr["fire"] or 0
+        local explosion_damage = damage_by_type_nxml_element.attr["explosion"] or 0
+        local drill_damage = damage_by_type_nxml_element.attr["drill"] or 0
+        c.damage_slice_add = c.damage_slice_add + slice_damage
+        c.damage_curse_add = c.damage_curse_add + curse_damage
+        c.damage_projectile_add = c.damage_projectile_add + projectile_damage
+        c.damage_melee_add = c.damage_melee_add + melee_damage
+        c.damage_ice_add = c.damage_ice_add + ice_damage
+        c.damage_electricity_add = c.damage_electricity_add + electricity_damage
+        c.damage_fire_add = c.damage_fire_add + fire_damage
+        c.damage_explosion_add = c.damage_explosion_add + explosion_damage
+        c.damage_drill_add = c.damage_drill_add + drill_damage
+      end
     end
 
     local area_damage_nxml_element = nxml_element:first_of("AreaDamageComponent")
@@ -481,6 +503,8 @@ local original_actions = {{
           c.damage_fire_add = c.damage_fire_add + damage_per_frame
         elseif damage_type == 'DAMAGE_EXPLOSION' then
           c.damage_explosion_add = c.damage_explosion_add + damage_per_frame
+        elseif damage_type == 'DAMAGE_DRILL' then
+          c.damage_drill_add = c.damage_drill_add + damage_per_frame
         end
       end
     end

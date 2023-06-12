@@ -57,7 +57,7 @@ actiondesc_dw_decrease_draw_4,Decreases Wand Spells/Cast by 4,,,,,,,,,杖の同�
 action_dw_decrease_draw_infinity,Decrease infinity wand castlish,,,,,,,,,無数の減少,,,,,
 actiondesc_dw_decrease_draw_infinity,Decrease wand spells/casts as much as possible.,,,,,,,,,杖の同時詠唱数を可能な限り減らします,,,,,
 action_dw_spell_vacuum,Spell vacuum,,,,,,,,,スペルバキューム,,,,,
-actiondesc_dw_spell_vacuum,Siphon off the next spelling to be read,,,,,,,,,次に読むスペルを吸い出します,,,,,
+actiondesc_dw_spell_vacuum,Ability to extract effects from the next projectile,,,,,,,,,次に読む放射物から効果を吸い出します,,,,,
 item_cannon_ball,Cannon ball,,,,,,,,,砲弾,,,,,
 action_angular_bolt,Angular Bolt,,,,,,,,,直角ボルト,,,,,
 actiondesc_angular_bolt,Projectile bouncing at right angles,,,,,,,,,直角に跳ね返る、直線番長な魔法のボルト,,,,,
