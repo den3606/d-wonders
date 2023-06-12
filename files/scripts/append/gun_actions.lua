@@ -1,4 +1,5 @@
 dofile_once("mods/d-wonders/files/scripts/lib/utilities.lua")
+local NXML = dofile_once('mods/d-wonders/files/scripts/lib/luanxml/nxml.lua')
 
 local original_actions = {{
   id = "DW_STACK_BOLT",
@@ -419,6 +420,73 @@ local original_actions = {{
       end
     end
     c.game_effect_entities = table.concat(after_effect_entities, ",")
+    draw_actions(1, true)
+  end,
+}, {
+  id = "DW_SPELL_VACUUM",
+  name = "$action_dw_spell_vacuum",
+  description = "$actiondesc_dw_spell_vacuum",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/spell_vacuum.png",
+  type = ACTION_TYPE_OTHER,
+  spawn_level = "4,5,6,10",
+  spawn_probability = "0.1,0.1,0.1,0.3",
+  price = 250,
+  mana = 15,
+  action = function()
+    local card = nil
+    if (#deck > 0) then
+      card = deck[1]
+    end
+
+    if card == nil then
+      return
+    end
+
+    if card.type ~= ACTION_TYPE_PROJECTILE then
+      return
+    end
+
+    local nxml_element = NXML.parse(ModTextFileGetContent(card.related_projectiles[1]))
+
+    local projectile_nxml_element = nxml_element:first_of("ProjectileComponent")
+    if projectile_nxml_element ~= nil then
+      c.damage_projectile_add = c.damage_projectile_add + (projectile_nxml_element.attr["damage"] or 0)
+      local config_explosion = projectile_nxml_element:first_of("config_explosion")
+      if config_explosion then
+        c.damage_explosion_add = c.damage_explosion_add + (config_explosion.attr["damage"] or 0)
+      end
+      c.speed_multiplier = c.speed_multiplier + (projectile_nxml_element.attr["speed_max"] or 0)
+      c.lifetime_add = c.lifetime_add + (projectile_nxml_element.attr["lifetime"] or 0)
+    end
+
+    local area_damage_nxml_element = nxml_element:first_of("AreaDamageComponent")
+    if area_damage_nxml_element ~= nil then
+      local damage_type = area_damage_nxml_element.attr["damage_type"]
+      local damage_per_frame = area_damage_nxml_element.attr["damage_per_frame"]
+
+      if damage_type ~= nil and damage_per_frame ~= nil then
+        if damage_type == 'DAMAGE_SLICE' then
+          c.damage_slice_add = c.damage_slice_add + damage_per_frame
+        elseif damage_type == 'DAMAGE_CURSE' then
+          c.damage_curse_add = c.damage_curse_add + damage_per_frame
+        elseif damage_type == 'DAMAGE_PROJECTILE' then
+          c.damage_projectile_add = c.damage_projectile_add + damage_per_frame
+        elseif damage_type == 'DAMAGE_MELEE' then
+          c.damage_melee_add = c.damage_melee_add + damage_per_frame
+        elseif damage_type == 'DAMAGE_ICE' then
+          c.damage_ice_add = c.damage_ice_add + damage_per_frame
+        elseif damage_type == 'DAMAGE_ELECTRICITY' then
+          c.damage_electricity_add = c.damage_electricity_add + damage_per_frame
+        elseif damage_type == 'DAMAGE_FIRE' then
+          c.damage_fire_add = c.damage_fire_add + damage_per_frame
+        elseif damage_type == 'DAMAGE_EXPLOSION' then
+          c.damage_explosion_add = c.damage_explosion_add + damage_per_frame
+        end
+      end
+    end
+
+    table.insert(discarded, card)
+    table.remove(deck, 1)
     draw_actions(1, true)
   end,
 }, {
