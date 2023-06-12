@@ -114,7 +114,7 @@
 	</SpriteComponent>
   <SpriteComponent
 		alpha="0.7"
-		image_file="mods/d-wonders/projectiles_gfx/mine_player_emissive.xml"
+		image_file="data/projectiles_gfx/mine_player_emissive.xml"
 		offset_x="0"
 		offset_y="0"
 		emissive="1"
