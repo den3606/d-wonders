@@ -336,6 +336,22 @@ local original_actions = {{
     end
   end,
 }, {
+  id = "DW_SHARK_LANCHER",
+  name = "$action_dw_shark_lancher",
+  description = "$actiondesc_dw_shark_lancher",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/shark_lancher.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/shark_lancher.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "2,3,4,5",
+  spawn_probability = "0.4,0.6,0.8,0.6",
+  price = 200,
+  mana = 200,
+  max_uses = 15,
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/shark_lancher.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 80
+  end,
+}, {
   id = "DW_SPIN_PATH",
   name = "$action_dw_spin_path",
   description = "$actiondesc_dw_spin_path",

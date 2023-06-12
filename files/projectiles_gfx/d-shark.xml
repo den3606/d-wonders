@@ -1,0 +1,29 @@
+<Sprite
+  filename="mods/d-wonders/files/projectiles_gfx/d-shark.png"
+  offset_x="32"
+  offset_y="8"
+  default_animation="stand">
+  <RectAnimation
+    frame_count="6"
+    frame_height="18"
+    frame_wait="0.05"
+    frame_width="38"
+    frames_per_row="6"
+    name="eat"
+    pos_x="0"
+    pos_y="1"
+  >
+
+  </RectAnimation>
+  <RectAnimation
+    frame_count="6"
+    frame_height="18"
+    frame_wait="0.05"
+    frame_width="38"
+    frames_per_row="6"
+    name="stand"
+    pos_x="0"
+    pos_y="1"
+  >
+  </RectAnimation>
+</Sprite>
