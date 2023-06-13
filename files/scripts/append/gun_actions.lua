@@ -368,6 +368,22 @@ local original_actions = {{
     c.fire_rate_wait = c.fire_rate_wait + 10
   end,
 }, {
+  id = "DW_REMOTE_BOMB",
+  name = "$action_dw_remote_bomb",
+  description = "$actiondesc_dw_remote_bomb",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/c4.png",
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "2,3,4,5",
+  spawn_probability = "1,1,1,1",
+  price = 130,
+  mana = 60,
+  max_uses = 5,
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/remote_bomb.xml",
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/remote_bomb.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 20
+  end,
+}, {
   id = "DW_SPIN_PATH",
   name = "$action_dw_spin_path",
   description = "$actiondesc_dw_spin_path",
@@ -436,6 +452,19 @@ local original_actions = {{
     end
     c.game_effect_entities = table.concat(after_effect_entities, ",")
     draw_actions(1, true)
+  end,
+}, {
+  id = "DW_REMOTE_BOMB_CONTROLLER",
+  name = "$action_dw_remote_bomb_controller",
+  description = "$actiondesc_dw_remote_bomb_controller",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/c4-remote-controller.png",
+  type = ACTION_TYPE_OTHER,
+  spawn_level = "10",
+  spawn_probability = "0",
+  price = 100,
+  mana = 0,
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/remote_bomb_controller.xml")
   end,
 }, {
   id = "DW_SPELL_VACUUM",
