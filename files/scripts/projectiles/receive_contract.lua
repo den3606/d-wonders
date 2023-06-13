@@ -5,7 +5,6 @@ local function payment(shooter_entity_id, colliding_entity_id)
   local damage_model_component_id = EntityGetFirstComponent(colliding_entity_id, "DamageModelComponent")
   if not damage_model_component_id then
     print_error("colliding_entity didn't have hp")
-    print('1')
     return false
   end
 
@@ -17,7 +16,6 @@ local function payment(shooter_entity_id, colliding_entity_id)
 
   local wallet = EntityGetFirstComponent(shooter_entity_id, "WalletComponent")
   if not wallet then
-    print('2')
     return false
   end
 
@@ -29,7 +27,6 @@ local function payment(shooter_entity_id, colliding_entity_id)
   else
     local shooter_damage_model_component_id = EntityGetFirstComponent(shooter_entity_id, "DamageModelComponent")
     if not shooter_damage_model_component_id then
-      print('3')
       return false
     end
 
