@@ -359,11 +359,10 @@ local original_actions = {{
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/contract.png",
   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/contract.xml"},
   type = ACTION_TYPE_PROJECTILE,
-  spawn_level = "2,3,4",
-  spawn_probability = "0.6,1,0.8",
-  price = 120,
-  mana = 70,
-  max_uses = 15,
+  spawn_level = "2,3,4,5",
+  spawn_probability = "0.6,1,0.8,1",
+  price = 200,
+  mana = 60,
   action = function()
     add_projectile("mods/d-wonders/files/entities/projectiles/deck/contract.xml")
     c.fire_rate_wait = c.fire_rate_wait + 10
