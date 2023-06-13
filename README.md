@@ -1,6 +1,9 @@
 # D Wonders
 
-Den が作成したオリジナル Spell MOD です。
+Original Spells MOD made by Den.
+
+Contributing is welcome. 
+Please contact us via Issue, etc.
 
 ## LICENSE
 
