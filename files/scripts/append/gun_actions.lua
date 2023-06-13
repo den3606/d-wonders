@@ -353,6 +353,22 @@ local original_actions = {{
     c.fire_rate_wait = c.fire_rate_wait + 80
   end,
 }, {
+  id = "DW_CONTRACT",
+  name = "$action_dw_contract",
+  description = "$actiondesc_dw_contract",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/contract.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/contract.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "2,3,4",
+  spawn_probability = "0.6,1,0.8",
+  price = 120,
+  mana = 70,
+  max_uses = 15,
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/contract.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 10
+  end,
+}, {
   id = "DW_SPIN_PATH",
   name = "$action_dw_spin_path",
   description = "$actiondesc_dw_spin_path",
