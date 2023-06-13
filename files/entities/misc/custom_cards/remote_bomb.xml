@@ -1,7 +1,7 @@
 <Entity>
   <Base file="data/entities/base_custom_card.xml" >
     <ItemComponent
-	        _tags="enabled_in_world,enabled_in_hand,enabled_in_world"
+	        _tags="enabled_in_world,enabled_in_hand"
     		is_equipable_forced="1" >
 	    </ItemComponent>
     <SpriteComponent
@@ -32,4 +32,10 @@
 		deck_capacity="0"
 	></gun_config>
   </AbilityComponent>
+  <LuaComponent
+		_tags="enabled_in_world"
+		script_enabled_changed="mods/d-wonders/files/scripts/magic/generate_remote_bomb_controller.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
 </Entity>
