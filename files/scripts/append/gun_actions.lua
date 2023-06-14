@@ -392,8 +392,9 @@ local original_actions = {{
   spawn_level = "4,5,6,10",
   spawn_probability = "0.3,0.6,0.7,1",
   price = 180,
-  mana = 100,
-  max_uses = 3,
+  mana = 130,
+  max_uses = 5,
+  never_unlimited = true,
   custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/remote_bomb_giga.xml",
   action = function()
     add_projectile("mods/d-wonders/files/entities/projectiles/remote_bomb_giga.xml")
