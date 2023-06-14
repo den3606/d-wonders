@@ -64,7 +64,7 @@ local original_actions = {{
 
     if charge_count >= MAX_CHARGE_SIZE then
       c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/projectiles/deck/charge_bolt_area_damage.xml,"
-      c.screenshake = c.screenshake + 20
+      c.screenshake = c.screenshake + 10
       c.damage_critical_chance = c.damage_critical_chance + 10
       add_projectile("mods/d-wonders/files/entities/projectiles/deck/charge_bolt.xml")
       charge_count = 1
@@ -478,7 +478,7 @@ local original_actions = {{
   description = "$actiondesc_dw_remote_bomb_controller",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/c4-remote-controller.png",
   type = ACTION_TYPE_OTHER,
-  spawn_level = "10",
+  spawn_level = "99",
   spawn_probability = "0",
   price = 100,
   mana = 0,
