@@ -1,0 +1,41 @@
+<Entity>
+  <Base file="data/entities/base_custom_card.xml" >
+    <ItemComponent
+	        _tags="enabled_in_world,enabled_in_hand"
+    		is_equipable_forced="1" >
+	    </ItemComponent>
+    <SpriteComponent
+			image_file="mods/d-wonders/files/ui_gfx/gun_actions/c4_giga.png"
+		></SpriteComponent>
+    <ItemActionComponent
+			_tags="enabled_in_world"
+			action_id="DW_REMOTE_BOMB_GIGA" >
+		</ItemActionComponent>
+  </Base>
+  <SpriteComponent
+		_tags="enabled_in_hand,not_enabled_in_wand"
+		_enabled="0"
+		offset_x="2.5"
+		offset_y="4.5"
+    image_file="mods/d-wonders/files/items_gfx/in_hand/c4_giga.png" >
+	</SpriteComponent>
+  <AbilityComponent
+		_tags="enabled_in_hand"
+		ui_name="$action_dw_remote_bomb_giga"
+		entity_file="mods/d-wonders/files/entities/projectiles/remote_bomb_giga.xml"
+		rotate_hand_amount="0.05"
+		throw_as_item="1"
+		simulate_throw_as_item="1"
+		use_entity_file_as_projectile_info_proxy="1"
+	>
+    <gun_config
+		deck_capacity="0"
+	></gun_config>
+  </AbilityComponent>
+  <LuaComponent
+		_tags="enabled_in_world"
+		script_enabled_changed="mods/d-wonders/files/scripts/magic/generate_remote_bomb_controller.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+</Entity>

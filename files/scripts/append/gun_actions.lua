@@ -384,6 +384,24 @@ local original_actions = {{
     c.fire_rate_wait = c.fire_rate_wait + 20
   end,
 }, {
+  id = "DW_REMOTE_BOMB_GIGA",
+  name = "$action_dw_remote_bomb_giga",
+  description = "$actiondesc_dw_remote_bomb_giga",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/c4_giga.png",
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "4,5,6,10",
+  spawn_probability = "0.3,0.6,0.7,1",
+  price = 180,
+  mana = 100,
+  max_uses = 3,
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/remote_bomb_giga.xml",
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/remote_bomb_giga.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 50
+    current_reload_time = current_reload_time + 10
+    shot_effects.recoil_knockback = 40
+  end,
+}, {
   id = "DW_SPIN_PATH",
   name = "$action_dw_spin_path",
   description = "$actiondesc_dw_spin_path",

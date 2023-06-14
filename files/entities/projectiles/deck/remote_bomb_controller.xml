@@ -103,7 +103,7 @@
 		lifetime="5"
 	></LifetimeComponent>
   <LuaComponent
-		script_source_file="mods/d-wonders/files/scripts/projectiles/detonate.lua"
+		script_source_file="mods/d-wonders/files/scripts/projectiles/detonate_c4.lua"
 		execute_every_n_frame="1"
 	></LuaComponent>
 </Entity>
