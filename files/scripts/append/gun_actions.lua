@@ -403,6 +403,28 @@ local original_actions = {{
     shot_effects.recoil_knockback = 40
   end,
 }, {
+  id = "DW_SHOOTINGSTAR",
+  name = "$action_dw_shootingstar",
+  description = "$actiondesc_dw_shootingstar",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/shootingstar.png",
+  type = ACTION_TYPE_STATIC_PROJECTILE,
+  spawn_level = "3,4,5,6",
+  spawn_probability = "0.8,0.8,1,1",
+  price = 200,
+  mana = 150,
+  max_uses = 15,
+  never_unlimited = true,
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/shootingstar_big_yellow.xml"},
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/shootingstar_origin.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 30
+    if (c.speed_multiplier >= 20) then
+      c.speed_multiplier = math.min(c.speed_multiplier, 20)
+    elseif (c.speed_multiplier < 0) then
+      c.speed_multiplier = 0
+    end
+  end,
+}, {
   id = "DW_SPIN_PATH",
   name = "$action_dw_spin_path",
   description = "$actiondesc_dw_spin_path",

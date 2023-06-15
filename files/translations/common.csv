@@ -42,6 +42,8 @@ action_dw_remote_bomb_giga,Giga Remote Controll Bomb,,,,,,,,,ギガリモコン�
 actiondesc_dw_remote_bomb_giga,"Okay... I'm in a safe zone here",,,,,,,,,ヨシ！ここなら安全だな！,,,,,
 action_dw_remote_bomb_controller,Remote Controll Bomb,,,,,,,,,起爆用リモコン,,,,,
 actiondesc_dw_remote_bomb_controller,Remote detonation of remote-controlled bombs,,,,,,,,,リモコン爆弾を遠隔で起爆させます,,,,,
+action_dw_shootingstar,Shooting star,,,,,,,,,シューティングスター,,,,,
+actiondesc_dw_shootingstar,Rain shooting stars over a wide area,,,,,,,,,広範囲なエリアに流れ星を降らせる,,,,,
 action_dw_spin_path,spin,,,,,,,,,スピン軌道,,,,,
 actiondesc_dw_spin_path,Projectile rotate in place,,,,,,,,,放射物がその場でコマのように回転する,,,,,
 action_dw_battery_light,Battery light,,,,,,,,,バッテリーライト,,,,,

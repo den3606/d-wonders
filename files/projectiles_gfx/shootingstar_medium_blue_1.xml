@@ -1,0 +1,17 @@
+<Sprite
+  filename="mods/d-wonders/files/projectiles_gfx/shootingstar_medium_blue_1.png"
+  offset_x="8.5"
+  offset_y="8.5" >
+  <RectAnimation
+    frame_count="2"
+    frame_width="17"
+    frame_height="17"
+    frame_wait="0.05"
+    frames_per_row="2"
+    name="default"
+    pos_x="0"
+    pos_y="1"
+    loop="1"
+    >
+  </RectAnimation>
+</Sprite>

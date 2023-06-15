@@ -1,7 +1,7 @@
 <Mod
 	name="d-wonders"
   tags=""
-  dont_upload_folders="resources"
+  dont_upload_folders="resources,debug"
   dont_upload_files=".editorconfig"
 >
 </Mod>
