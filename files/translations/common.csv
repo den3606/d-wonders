@@ -44,6 +44,8 @@ action_dw_remote_bomb_controller,Remote Controll Bomb,,,,,,,,,起爆用リモコ
 actiondesc_dw_remote_bomb_controller,Remote detonation of remote-controlled bombs,,,,,,,,,リモコン爆弾を遠隔で起爆させます,,,,,
 action_dw_shootingstar,Shooting star,,,,,,,,,シューティングスター,,,,,
 actiondesc_dw_shootingstar,Rain shooting stars over a wide area,,,,,,,,,広範囲なエリアに流れ星を降らせる,,,,,
+action_dw_frozen_field,Frozen field,,,,,,,,,凍結フィールド,,,,,
+actiondesc_dw_frozen_field,Freezes a wide range of organisms,,,,,,,,,広範囲の生物を凍結状態にする,,,,,
 action_dw_spin_path,spin,,,,,,,,,スピン軌道,,,,,
 actiondesc_dw_spin_path,Projectile rotate in place,,,,,,,,,放射物がその場でコマのように回転する,,,,,
 action_dw_battery_light,Battery light,,,,,,,,,バッテリーライト,,,,,

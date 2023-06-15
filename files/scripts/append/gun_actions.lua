@@ -510,6 +510,23 @@ local original_actions = {{
     add_projectile("mods/d-wonders/files/entities/projectiles/deck/remote_bomb_controller.xml")
   end,
 }, {
+  id = "DW_FROZEN_FIELD",
+  name = "$action_dw_frozen_field",
+  description = "$actiondesc_dw_frozen_field",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/frozen_field.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/frozen_field.xml"},
+  type = ACTION_TYPE_OTHER,
+  spawn_level = "1,2,3,4,5",
+  spawn_probability = "0.8,0.8,0.8,0.8,1",
+  price = 160,
+  mana = 150,
+  max_uses = 15,
+  never_unlimited = true,
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/frozen_field.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 30
+  end,
+}, {
   id = "DW_SPELL_VACUUM",
   name = "$action_dw_spell_vacuum",
   description = "$actiondesc_dw_spell_vacuum",
