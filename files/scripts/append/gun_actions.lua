@@ -405,6 +405,192 @@ local original_actions = {{
     shot_effects.recoil_knockback = 40
   end,
 }, {
+  id = "DW_LIQUID_SHOT",
+  name = "$action_dw_liquid_shot",
+  description = "$actiondesc_dw_liquid_shot",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "2,3,4,5,6",
+  spawn_probability = "1,1,1,1,1",
+  price = 100,
+  mana = 3,
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/liquid_shot.xml",
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/liquid_shot_light.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 5
+    c.damage_critical_chance = c.damage_critical_chance - 10
+  end,
+}, {
+  id = "DW_LIQUID_SHOT_ACID",
+  name = "$action_dw_liquid_shot_acid",
+  description = "$actiondesc_dw_liquid_shot_acid",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_acid.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_acid.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "5,6",
+  spawn_probability = "1,1",
+  price = 150,
+  mana = 5,
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/liquid_shot.xml",
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/liquid_shot_acid.xml")
+    c.fire_rate_wait = c.fire_rate_wait - 10
+    c.damage_critical_chance = c.damage_critical_chance + 10
+    shot_effects.recoil_knockback = shot_effects.recoil_knockback - 10.0
+  end,
+}, {
+  id = "DW_LIQUID_SHOT_BLOOD",
+  name = "$action_dw_liquid_shot_blood",
+  description = "$actiondesc_dw_liquid_shot_blood",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_blood.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_blood.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "2,3,4,5,6",
+  spawn_probability = "0.5,0.6,0.7,0.8,1",
+  price = 150,
+  mana = 20,
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/liquid_shot.xml",
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/liquid_shot_blood.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 20
+    c.damage_critical_chance = c.damage_critical_chance + 20
+    c.spread_degrees = c.spread_degrees - 2
+    shot_effects.recoil_knockback = shot_effects.recoil_knockback + 2.0
+  end,
+}, {
+  id = "DW_LIQUID_SHOT_CHARM",
+  name = "$action_dw_liquid_shot_charm",
+  description = "$actiondesc_dw_liquid_shot_charm",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_charm.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_charm.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "2,4,5,6",
+  spawn_probability = "0.1,0.1,0.6,1",
+  price = 200,
+  mana = 10,
+  max_uses = 10,
+  never_unlimited = true,
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/liquid_shot.xml",
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/liquid_shot_charm.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 30
+    c.damage_melee_add = c.damage_melee_add - 1
+    c.damage_projectile_add = c.damage_projectile_add - 1
+    c.damage_electricity_add = c.damage_electricity_add - 1
+    c.damage_fire_add = c.damage_fire_add - 1
+    c.damage_explosion_add = c.damage_explosion_add - 1
+    c.damage_ice_add = c.damage_ice_add - 1
+    c.damage_slice_add = c.damage_slice_add - 1
+    c.damage_curse_add = c.damage_curse_add - 1
+    c.damage_drill_add = c.damage_drill_add - 1
+    c.damage_healing_add = c.damage_healing_add + 0.2
+  end,
+}, {
+  id = "DW_LIQUID_SHOT_DARK",
+  name = "$action_dw_liquid_shot_dark",
+  description = "$actiondesc_dw_liquid_shot_dark",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_dark.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_dark.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "5,6",
+  spawn_probability = "1,1",
+  price = 200,
+  mana = 15,
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/liquid_shot.xml",
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/liquid_shot_dark.xml")
+    c.fire_rate_wait = c.fire_rate_wait - 20
+    current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 20
+    c.spread_degrees = c.spread_degrees + 10
+    c.damage_curse_add = c.damage_curse_add + 0.1
+  end,
+}, {
+  id = "DW_LIQUID_SHOT_LAVA",
+  name = "$action_dw_liquid_shot_lava",
+  description = "$actiondesc_dw_liquid_shot_lava",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_lava.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_lava.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "2,3,4,5,6",
+  spawn_probability = "0.5,0.6,0.7,0.8,1",
+  price = 170,
+  mana = 30,
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/liquid_shot.xml",
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/liquid_shot_lava.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 30
+    current_reload_time = current_reload_time + 30
+    c.damage_fire_add = c.damage_fire_add + 1
+    c.damage_critical_chance = c.damage_critical_chance + 5
+    c.spread_degrees = c.spread_degrees - 2
+  end,
+}, {
+  id = "DW_LIQUID_SHOT_MANA",
+  name = "$action_dw_liquid_shot_mana",
+  description = "$actiondesc_dw_liquid_shot_mana",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_mana.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_mana.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "2,4,6",
+  spawn_probability = "1,1,1",
+  price = 200,
+  mana = -15,
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/liquid_shot.xml",
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/liquid_shot_mana.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 5
+  end,
+}, {
+  id = "DW_LIQUID_SHOT_OIL",
+  name = "$action_dw_liquid_shot_oil",
+  description = "$actiondesc_dw_liquid_shot_oil",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_oil.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_oil.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "2,3,4,5,6",
+  spawn_probability = "0.5,0.6,0.7,0.8,1",
+  price = 140,
+  mana = 10,
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/liquid_shot.xml",
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/liquid_shot_oil.xml")
+    c.fire_rate_wait = c.fire_rate_wait - 5
+  end,
+}, {
+  id = "DW_LIQUID_SHOT_TOXIC",
+  name = "$action_dw_liquid_shot_toxic",
+  description = "$actiondesc_dw_liquid_shot_toxic",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_toxic.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_toxic.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "2,3,4,5,6",
+  spawn_probability = "0.5,0.6,0.7,0.8,1",
+  price = 150,
+  mana = 20,
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/liquid_shot.xml",
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/liquid_shot_toxic.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 10
+    c.spread_degrees = c.spread_degrees + 10
+  end,
+}, {
+  id = "DW_LIQUID_SHOT_WATER",
+  name = "$action_dw_liquid_shot_water",
+  description = "$actiondesc_dw_liquid_shot_water",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_water.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_water.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "2,3,4,5,6",
+  spawn_probability = "0.5,0.6,0.7,0.8,1",
+  price = 100,
+  mana = 5,
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/liquid_shot.xml",
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/liquid_shot_water.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 5
+  end,
+}, {
   id = "DW_SHOOTINGSTAR",
   name = "$action_dw_shootingstar",
   description = "$actiondesc_dw_shootingstar",

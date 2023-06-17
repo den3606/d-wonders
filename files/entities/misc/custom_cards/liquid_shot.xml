@@ -1,0 +1,30 @@
+<Entity>
+  <Base file="data/entities/base_custom_card.xml">
+    <SpriteComponent image_file="mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot.png" />
+    <ItemActionComponent _tags="enabled_in_hand,enabled_in_inventory"
+                             action_id="DW_LIQUID_SHOT" />
+  </Base>
+  <MaterialSuckerComponent
+    _tags="enabled_in_world"
+    material_type="0"
+    barrel_size="0"
+    suck_static_materials="0"
+    set_projectile_to_liquid="1"
+    randomized_position.min_x="-8"
+    randomized_position.max_x="8"
+    randomized_position.min_y="-8"
+    randomized_position.max_y="8"
+  >
+  </MaterialSuckerComponent>
+  <LuaComponent
+		_tags="enabled_in_world"
+		script_source_file="mods/d-wonders/files/scripts/magic/liquid_shot.lua"
+		execute_every_n_frame="10"
+		>
+  </LuaComponent>
+  <VariableStorageComponent
+  name="dw_liquid_shot.current_material"
+  value_int="0"
+  >
+	</VariableStorageComponent>
+</Entity>
