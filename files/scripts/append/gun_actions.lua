@@ -731,72 +731,7 @@ local original_actions = {{
   action = function()
     draw_actions(1, true)
   end,
-} -- {
---   id = "DW_ANGULAR_BOLT",
---   name = "$action_angular_bolt",
---   description = "$actiondesc_angular_bolt",
---   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/angular_bolt.png",
---   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/angular_bolt.xml"},
---   type = ACTION_TYPE_PROJECTILE,
---   spawn_level = "1,2,3,4,5",
---   spawn_probability = "0.5,1,1,1,1",
---   price = 120,
---   mana = 40,
---   action = function()
---     add_projectile("mods/d-wonders/files/entities/projectiles/deck/angular_bolt.xml")
---     c.fire_rate_wait = c.fire_rate_wait + 25
---   end,
--- }, {
---   id = "DW_LIQUID_BALLOON",
---   name = "$action_dw_hammer",
---   description = "$actiondesc_dw_hammer",
---   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/hammer.png",
---   related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/hammer.xml"},
---   type = ACTION_TYPE_PROJECTILE,
---   spawn_level = "1,2,3,4,5",
---   spawn_probability = "0.2,0.8,0.8,0.6,0.3",
---   price = 130,
---   mana = 30,
---   max_uses = 120,
---   action = function()
--- NOTE:Enchant式のバルーン
---     local x, y = EntityGetTransform(GetUpdatedEntityID())
---     add_projectile("mods/d-wonders/files/entities/projectiles/deck/hammer.xml")
---     SetRandomSeed(x, y)
---     c.fire_rate_wait = c.fire_rate_wait + Random(0, 20)
---     c.spread_degrees = c.spread_degrees + Random(10, 25)
---   end,
--- }, {
---   id = "DW_TWICE_TRIGGER",
---   name = "$action_dw_twice_trigger",
---   description = "$actiondesc_dw_twice_trigger",
---   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/twice_trigger.png",
---   spawn_requires_flag = "card_unlocked_mestari",
---   type = ACTION_TYPE_OTHER,
---   recursive = true,
---   spawn_level = "4,5,6,10",
---   spawn_probability = "0.1,0.4,0.4,1",
---   price = 100,
---   mana = 5,
---   action = function(recursion_level, iteration)
---     c.fire_rate_wait = c.fire_rate_wait + 10
---     local current_hand_size = #hand
---     local next_card = deck[1]
---     if next_card == nil then
---       draw_actions(1, true)
---       return
---     end
---     local rec = check_recursion(next_card, recursion_level)
---     if (rec > -1) and (next_card.id ~= "RESET") and string.find(next_card.id, "TRIGGER") then
---       draw_actions(1, false)
---       for i = current_hand_size, #hand do
---         table.insert(deck, 1, hand[i])
---         table.remove(hand, i)
---       end
---     end
---   end,
--- },
-}
+}}
 print('====================================================')
 print('There are ' .. #original_actions .. ' spells of d-wonders')
 print('====================================================')
