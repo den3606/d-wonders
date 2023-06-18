@@ -154,6 +154,12 @@
                     g="215"
                     b="54"
                     radius="30" />
+  <LuaComponent
+    script_source_file="mods/d-wonders/files/scripts/projectiles/stack_bolt_damage.lua"
+    execute_every_n_frame="-1"
+    execute_on_added="1"
+  >
+  </LuaComponent>
   <AudioComponent file="data/audio/Desktop/projectiles.bank"
                     event_root="player_projectiles/bullet_light" />
   <VariableStorageComponent name="projectile_file"
