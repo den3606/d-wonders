@@ -471,17 +471,7 @@ local original_actions = {{
   never_unlimited = true,
   action = function()
     add_projectile("mods/d-wonders/files/entities/projectiles/deck/liquid_shot_charm.xml")
-    c.fire_rate_wait = c.fire_rate_wait + 30
-    c.damage_melee_add = c.damage_melee_add - 1
-    c.damage_projectile_add = c.damage_projectile_add - 1
-    c.damage_electricity_add = c.damage_electricity_add - 1
-    c.damage_fire_add = c.damage_fire_add - 1
-    c.damage_explosion_add = c.damage_explosion_add - 1
-    c.damage_ice_add = c.damage_ice_add - 1
-    c.damage_slice_add = c.damage_slice_add - 1
-    c.damage_curse_add = c.damage_curse_add - 1
-    c.damage_drill_add = c.damage_drill_add - 1
-    c.damage_healing_add = c.damage_healing_add + 0.2
+    c.damage_healing_add = c.damage_healing_add - 0.04
   end,
 }, {
   id = "DW_LIQUID_SHOT_DARK",
