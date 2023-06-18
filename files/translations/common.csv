@@ -48,7 +48,7 @@ action_dw_liquid_shot_blood,Liquid Shot [Blood],,,,,,,,,リキッドショット
 actiondesc_dw_liquid_shot_blood,"Utilizes the power of blood, critical projectile",,,,,,,,,血の力を利用する、クリティカルな放射物,,,,,
 action_dw_liquid_shot_charm,Liquid Shot [Charm],,,,,,,,,リキッドショット[愛],,,,,
 actiondesc_dw_liquid_shot_charm,"Utilizes the power of pheromones, a gentle projectile for living beings",,,,,,,,,フェロモンの力を利用する、生物に優しい放射物,,,,,
-action_dw_liquid_shot_dark,Liquid Shot [Dark],,,,,,,,,リキッドショット[暗],,,,,
+action_dw_liquid_shot_dark,Liquid Shot [Darkness],,,,,,,,,リキッドショット[闇],,,,,
 actiondesc_dw_liquid_shot_dark,"Utilizes cursed liquid, ominous projectile",,,,,,,,,呪われた液体を利用する、禍々しい放射物,,,,,
 action_dw_liquid_shot_lava,Liquid Shot [Lava],,,,,,,,,リキッドショット[獄],,,,,
 actiondesc_dw_liquid_shot_lava,"Utilizes the power of lava, dangerous projectile",,,,,,,,,溶岩の力を利用する、危険な放射物,,,,,
