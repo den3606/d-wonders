@@ -69,7 +69,7 @@ actiondesc_dw_frozen_field,Freezes a wide range of organisms,,,,,,,,,広範囲�
 action_dw_spin_path,spin,,,,,,,,,スピン軌道,,,,,
 actiondesc_dw_spin_path,Projectile rotate in place,,,,,,,,,放射物がその場でコマのように回転する,,,,,
 action_dw_battery_light,Battery light,,,,,,,,,バッテリーライト,,,,,
-actiondesc_dw_battery_light,Fairly bright spells that can be recharged with electricity,,,,,,,,,電気で充電できる、かなり明るい放射物,,,,,
+actiondesc_dw_battery_light,Fairly bright spells that can be recharged with electricity,,,,,,,,,電気で充電できる、広範囲を照らすライト,,,,,
 action_dw_damage_reverser_ice,ice damage reverser,,,,,,,,,凍結ダメージ反転,,,,,
 actiondesc_dw_damage_reverser_ice,Reverses chanted freezing damage to a negative,,,,,,,,,詠唱された凍結ダメージをマイナスに反転させる,,,,,
 action_dw_increase_draw_2,Increase 2 wand cast,,,,,,,,,杖詠唱2増加,,,,,
