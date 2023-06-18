@@ -1,5 +1,5 @@
 <Entity name="$projectile_default"
-        tags="projectile_player">
+        tags="projectile_player,dw_stack_bolt">
   <Base file="data/entities/base_projectile.xml">
     <VelocityComponent gravity_y="200"
                            air_friction="1.7"
@@ -154,12 +154,6 @@
                     g="239"
                     b="150"
                     radius="30" />
-  <LuaComponent
-    script_source_file="mods/d-wonders/files/scripts/projectiles/stack_bolt_damage.lua"
-    execute_every_n_frame="-1"
-		execute_on_added="1"
-  >
-  </LuaComponent>
   <AudioComponent file="data/audio/Desktop/projectiles.bank"
                     event_root="player_projectiles/bullet_light" />
   <VariableStorageComponent name="projectile_file"

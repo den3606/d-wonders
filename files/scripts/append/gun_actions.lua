@@ -6,28 +6,35 @@ local original_actions = {{
   name = "$action_dw_stack_bolt",
   description = "$actiondesc_dw_stack_bolt",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/stack_bolt.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/stack_bolt_low.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/stack_bolt_high.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "0,1,2,3,4",
   spawn_probability = "0.3,0.5,0.7,1,1",
   price = 150,
   mana = 9,
   action = function()
+    local HOLD_FRAME_SIZE = 120
     local player_entity_id = GetPlayerEntity()
-
-    local stack_count = GetInternalVariableValue(player_entity_id, 'stack_bolt_stuck_count', 'value_int') or 0
-    local started_frame = GetInternalVariableValue(player_entity_id, 'stack_bolt_started_frame', 'value_int')
-
-    if started_frame == nil or GameGetFrameNum() - started_frame > 90 then
-      stack_count = 1
+    if player_entity_id == nil then
+      return
     end
 
-    if 480 < stack_count then
-      add_projectile("mods/d-wonders/files/entities/projectiles/deck/stack_bolt_high.xml")
-    elseif 240 < stack_count then
+    local stack_count = GetInternalVariableValue(player_entity_id, 'stack_bolt_stuck_count', 'value_int') or 1
+    local started_frame = GetInternalVariableValue(player_entity_id, 'stack_bolt_started_frame', 'value_int')
+
+    if stack_count == nil or started_frame == nil or GameGetFrameNum() - started_frame > HOLD_FRAME_SIZE then
+      stack_count = 1
+      started_frame = GameGetFrameNum()
+      AddNewInternalVariable(player_entity_id, 'stack_bolt_stuck_count', 'value_int', stack_count)
+      AddNewInternalVariable(player_entity_id, 'stack_bolt_started_frame', 'value_int', started_frame)
+    end
+
+    if stack_count <= 240 then
+      add_projectile("mods/d-wonders/files/entities/projectiles/deck/stack_bolt_low.xml")
+    elseif stack_count <= 480 then
       add_projectile("mods/d-wonders/files/entities/projectiles/deck/stack_bolt_middle.xml")
     else
-      add_projectile("mods/d-wonders/files/entities/projectiles/deck/stack_bolt_low.xml")
+      add_projectile("mods/d-wonders/files/entities/projectiles/deck/stack_bolt_high.xml")
     end
 
     c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/misc/stack_bolt.xml,"
