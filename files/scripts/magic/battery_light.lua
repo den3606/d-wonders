@@ -1,16 +1,15 @@
 dofile_once("mods/d-wonders/files/scripts/lib/utilities.lua")
 
-local MAX_USES_REMAINING = 60
+local MAX_USES_REMAINING = 40
 local entity_id = GetUpdatedEntityID()
 local parent_entity_id = EntityGetParent(entity_id)
 local is_electricity_in_hand = false
-
 if parent_entity_id == nil then
   return
 end
 
 for _, child_entity_id in ipairs(EntityGetAllChildren(parent_entity_id) or {}) do
-  local component_ids = EntityGetComponent(child_entity_id, "SpriteParticleEmitterComponent") or {}
+  local component_ids = EntityGetComponentIncludingDisabled(child_entity_id, "SpriteParticleEmitterComponent") or {}
   for _, component_id in ipairs(component_ids) do
     if component_id == nil then
       return
