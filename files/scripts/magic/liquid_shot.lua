@@ -8,7 +8,7 @@ local function alter_to(action_id, before_card_entity_id)
   return CreateItemActionEntity(action_id, x, y)
 end
 
-local is_shop_item = not EntityGetFirstComponent(liquid_card_entity_id, "ItemCostComponent")
+local is_shop_item = EntityGetFirstComponent(liquid_card_entity_id, "ItemCostComponent")
 if is_shop_item then
   return
 end
