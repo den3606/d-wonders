@@ -15,7 +15,7 @@
 		on_death_gfx_leave_sprite="0"
 		on_lifetime_out_explode="0"
 		on_collision_die="1"
-		damage="1"
+		damage="1.5"
 		lifetime="180"
 		shoot_light_flash_r="255"
 		shoot_light_flash_g="100"

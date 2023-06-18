@@ -18,4 +18,10 @@ if damage_model_component == nil then
 end
 
 local hp = ComponentGetValue2(damage_model_component, "hp")
-ComponentSetValue2(damage_model_component, "hp", hp - 0.04)
+local new_hp = hp - 0.04
+
+if new_hp < 0.04 then
+  KillPlayer('$dw_overbleeding_dead')
+end
+
+ComponentSetValue2(damage_model_component, "hp", new_hp)
