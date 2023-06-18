@@ -1,15 +1,15 @@
 <Entity name="$projectile_default"
         tags="projectile_player">
-    <Base file="data/entities/base_projectile.xml">
-        <VelocityComponent gravity_y="200"
-                           air_friction="1.7"
+  <Base file="data/entities/base_projectile.xml">
+    <VelocityComponent gravity_y="200"
+                           air_friction="1.4"
                            mass="0.04" />
-    </Base>
-    <ProjectileComponent _enabled="1"
+  </Base>
+  <ProjectileComponent _enabled="1"
                          lob_min="0.5"
                          lob_max="0.7"
-                         speed_min="400"
-                         speed_max="450"
+                         speed_min="550"
+                         speed_max="650"
                          friction="1"
                          direction_random_rad="0.00"
                          on_death_explode="1"
@@ -18,7 +18,7 @@
                          explosion_dont_damage_shooter="1"
                          on_collision_die="1"
                          lifetime="40"
-                         damage="0.04"
+                         damage="0.12"
                          velocity_sets_scale="1"
                          lifetime_randomness="7"
                          ragdoll_force_multiplier="0.005"
@@ -29,7 +29,7 @@
                          shoot_light_flash_b="26"
                          shoot_light_flash_radius="80"
                          knockback_force="0">
-        <config_explosion never_cache="1"
+    <config_explosion never_cache="1"
                           damage="0.0"
                           camera_shake="0.5"
                           explosion_radius="2"
@@ -55,15 +55,15 @@
                           light_enabled="0"
                           stains_enabled="1"
                           stains_radius="3" />
-    </ProjectileComponent>
-    <SpriteComponent _enabled="1"
+  </ProjectileComponent>
+  <SpriteComponent _enabled="1"
                      alpha="1"
                      image_file="mods/d-wonders/files/projectiles_gfx/stack_bolt_high.xml"
                      next_rect_animation="default"
                      rect_animation="default"
                      additive="1" />
-    <!-- dense emitter -->
-    <ParticleEmitterComponent emitted_material_name="spark_red"
+  <!-- dense emitter -->
+  <ParticleEmitterComponent emitted_material_name="spark_red"
                               offset.x="0"
                               offset.y="0"
                               x_pos_offset_min="0"
@@ -91,8 +91,8 @@
                               emit_cosmetic_particles="1"
                               create_real_particles="0"
                               is_emitting="1" />
-    <!-- sparse emitter -->
-    <ParticleEmitterComponent emitted_material_name="spark_red"
+  <!-- sparse emitter -->
+  <ParticleEmitterComponent emitted_material_name="spark_red"
                               offset.x="0"
                               offset.y="0"
                               x_pos_offset_min="0"
@@ -120,8 +120,8 @@
                               emit_cosmetic_particles="1"
                               create_real_particles="0"
                               is_emitting="1" />
-    <!-- very sparse emitter -->
-    <ParticleEmitterComponent emitted_material_name="spark_red"
+  <!-- very sparse emitter -->
+  <ParticleEmitterComponent emitted_material_name="spark_red"
                               offset.x="0"
                               offset.y="0"
                               x_pos_offset_min="0"
@@ -149,13 +149,13 @@
                               emit_cosmetic_particles="1"
                               create_real_particles="0"
                               is_emitting="1" />
-    <LightComponent _enabled="1"
+  <LightComponent _enabled="1"
                     r="237"
                     g="96"
                     b="26"
                     radius="30" />
-    <AudioComponent file="data/audio/Desktop/projectiles.bank"
+  <AudioComponent file="data/audio/Desktop/projectiles.bank"
                     event_root="player_projectiles/bullet_light" />
-    <VariableStorageComponent name="projectile_file"
+  <VariableStorageComponent name="projectile_file"
                               value_string="mods/d-wonders/files/entities/projectiles/deck/stack_bolt_high.xml" />
 </Entity>
