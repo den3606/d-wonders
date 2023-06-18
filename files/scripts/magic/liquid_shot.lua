@@ -4,8 +4,13 @@ local liquid_card_entity_id = GetUpdatedEntityID()
 local function alter_to(action_id, before_card_entity_id)
   local x, y = EntityGetTransform(before_card_entity_id)
   EntityKill(before_card_entity_id)
-  EntityLoad("data/entities/particles/perk_reroll.xml", x, y - 5)
-  return CreateItemActionEntity(action_id, x, y - 5)
+  EntityLoad("data/entities/particles/perk_reroll.xml", x, y)
+  return CreateItemActionEntity(action_id, x, y)
+end
+
+local is_shop_item = not EntityGetFirstComponent(liquid_card_entity_id, "ItemCostComponent")
+if is_shop_item then
+  return
 end
 
 local material_sucker_component_id = EntityGetFirstComponent(liquid_card_entity_id, "MaterialSuckerComponent")
@@ -43,6 +48,9 @@ elseif material_name == "poison" or material_name == "cloud_radioactive" or mate
   new_card_entity_id = alter_to("DW_LIQUID_SHOT_TOXIC", liquid_card_entity_id)
 elseif material_name == "water" or material_name == "water_temp" or material_name == "water_swamp" or material_name == "water_fading" or material_name == "water_salt" or material_name == "water_ice" then
   new_card_entity_id = alter_to("DW_LIQUID_SHOT_WATER", liquid_card_entity_id)
+else
+  -- NOTE: If material isn't target material, Card shoud not have material id
+  return
 end
 
 SetInternalVariableValue(new_card_entity_id, "dw_liquid_shot.current_material", "value_int", material_id)
