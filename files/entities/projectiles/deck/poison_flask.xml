@@ -14,8 +14,8 @@
 			lifetime="120"
 			>
       <config_explosion
-			damage="0.4"
-			explosion_radius="12"
+			damage="0.6"
+			explosion_radius="25"
 			explosion_sprite="data/particles/explosion_032_slime.xml"
 			load_this_entity="data/entities/particles/particle_explosion/main_green_small.xml"
 			audio_event_name="explosions/tnt"
