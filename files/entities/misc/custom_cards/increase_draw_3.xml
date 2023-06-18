@@ -1,12 +1,18 @@
+
 <Entity>
-  <Base file="data/entities/base_custom_card.xml">
-    <SpriteComponent image_file="mods/d-wonders/files/ui_gfx/gun_actions/increase_draw_3.png" />
-    <ItemActionComponent _tags="enabled_in_world,enabled_in_inventory"
-                             action_id="DW_INCREASE_DRAW_3" />
+  <Base file="data/entities/base_custom_card.xml" >
+    <SpriteComponent
+			image_file="mods/d-wonders/files/ui_gfx/gun_actions/increase_draw_3.png" >
+		</SpriteComponent>
+    <ItemActionComponent
+			_tags="enabled_in_world"
+			action_id="DW_INCREASE_DRAW_3" >
+		</ItemActionComponent>
   </Base>
   <LuaComponent
-		_tags="enabled_in_hand,enabled_in_inventory"
+		_tags="enabled_in_hand"
 		script_enabled_changed="mods/d-wonders/files/scripts/magic/increase_draw_3.lua"
 		execute_every_n_frame="-1"
-	 />
+	 >
+   </LuaComponent>
 </Entity>

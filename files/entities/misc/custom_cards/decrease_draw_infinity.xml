@@ -1,12 +1,17 @@
 <Entity>
-  <Base file="data/entities/base_custom_card.xml">
-    <SpriteComponent image_file="mods/d-wonders/files/ui_gfx/gun_actions/decrease_draw_infinity.png" />
-    <ItemActionComponent _tags="enabled_in_world"
-                             action_id="DW_DECREASE_DRAW_INFINITY" />
+  <Base file="data/entities/base_custom_card.xml" >
+    <SpriteComponent
+			image_file="mods/d-wonders/files/ui_gfx/gun_actions/decrease_draw_infinity.png" >
+		</SpriteComponent>
+    <ItemActionComponent
+			_tags="enabled_in_world"
+			action_id="DW_DECREASE_DRAW_INFINITY" >
+		</ItemActionComponent>
   </Base>
   <LuaComponent
 		_tags="enabled_in_hand"
 		script_enabled_changed="mods/d-wonders/files/scripts/magic/decrease_draw_infinity.lua"
 		execute_every_n_frame="-1"
-	 />
+	 >
+   </LuaComponent>
 </Entity>
