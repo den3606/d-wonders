@@ -651,7 +651,7 @@ local original_actions = {{
   action = function()
     local ice_damage = c.damage_ice_add
     c.damage_ice_add = 0
-    c.damage_healing_add = -ice_damage
+    c.damage_healing_add = c.damage_healing_add - ice_damage
     local before_extra_entities = Split(c.extra_entities, ",")
     local after_extra_entities = {}
     for _, extra_entity in ipairs(before_extra_entities) do
