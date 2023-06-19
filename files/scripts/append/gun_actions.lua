@@ -445,6 +445,27 @@ local original_actions = {{
     shot_effects.recoil_knockback = shot_effects.recoil_knockback - 10.0
   end,
 }, {
+  id = "DW_LIQUID_SHOT_ANGRY",
+  name = "$action_dw_liquid_shot_angry",
+  description = "$actiondesc_dw_liquid_shot_angry",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_angry.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_angry.xml", "data/entities/particles/tinyspark_yellow.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "3,4,5",
+  spawn_probability = "0.5,0.5,0.5",
+  price = 150,
+  mana = 7,
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/liquid_shot_angry.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 5
+    c.damage_projectile_add = c.damage_projectile_add + 0.12
+    c.gore_particles = c.gore_particles + 2
+    c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_yellow.xml,"
+    shot_effects.recoil_knockback = shot_effects.recoil_knockback + 1.0
+    c.damage_critical_chance = c.damage_critical_chance + 5
+    c.spread_degrees = c.spread_degrees + 2
+  end,
+}, {
   id = "DW_LIQUID_SHOT_BLOOD",
   name = "$action_dw_liquid_shot_blood",
   description = "$actiondesc_dw_liquid_shot_blood",
