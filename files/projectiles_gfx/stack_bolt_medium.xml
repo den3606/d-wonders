@@ -1,5 +1,5 @@
 <Sprite
-  filename="mods/d-wonders/files/projectiles_gfx/stack_bolt_middle.png"
+  filename="mods/d-wonders/files/projectiles_gfx/stack_bolt_medium.png"
   offset_x="4.5"
   offset_y="4.5" >
   <RectAnimation

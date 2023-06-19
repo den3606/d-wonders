@@ -158,4 +158,10 @@
                     event_root="player_projectiles/bullet_light" />
   <VariableStorageComponent name="projectile_file"
                               value_string="mods/d-wonders/files/entities/projectiles/deck/stack_bolt_low.xml" />
+  <LuaComponent
+    script_source_file="mods/d-wonders/files/scripts/projectiles/stack_bolt_low_damage.lua"
+		execute_on_added="1"
+    remove_after_executed="1"
+  >
+  </LuaComponent>
 </Entity>

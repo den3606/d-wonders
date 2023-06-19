@@ -13,7 +13,7 @@ local original_actions = {{
   price = 150,
   mana = 9,
   action = function()
-    local HOLD_FRAME_SIZE = 120
+    local HOLD_FRAME_SIZE = 100
     local player_entity_id = GetPlayerEntity()
     if player_entity_id == nil then
       return
@@ -31,13 +31,13 @@ local original_actions = {{
 
     if stack_count <= 240 then
       add_projectile("mods/d-wonders/files/entities/projectiles/deck/stack_bolt_low.xml")
-    elseif stack_count <= 480 then
-      add_projectile("mods/d-wonders/files/entities/projectiles/deck/stack_bolt_middle.xml")
+    elseif stack_count <= 600 then
+      add_projectile("mods/d-wonders/files/entities/projectiles/deck/stack_bolt_medium.xml")
     else
       add_projectile("mods/d-wonders/files/entities/projectiles/deck/stack_bolt_high.xml")
     end
 
-    c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/misc/stack_bolt.xml,"
+    c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/misc/stack_bolt_count.xml,"
     c.fire_rate_wait = c.fire_rate_wait + 6
     c.screenshake = c.screenshake + 0.5
     c.spread_degrees = c.spread_degrees + 2.0
