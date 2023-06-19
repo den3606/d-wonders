@@ -137,9 +137,8 @@ local original_actions = {{
   mana = 25,
   max_uses = 120,
   action = function()
-    local x, y = EntityGetTransform(GetUpdatedEntityID())
     add_projectile("mods/d-wonders/files/entities/projectiles/deck/scythe.xml")
-    SetRandomSeed(x, y)
+    SetRandomSeed(GameGetFrameNum(), GameGetFrameNum() + 48164)
     c.fire_rate_wait = c.fire_rate_wait + Random(0, 15)
     c.spread_degrees = c.spread_degrees + 6 + Random(5, 15)
   end,
@@ -462,6 +461,25 @@ local original_actions = {{
     c.damage_critical_chance = c.damage_critical_chance + 20
     c.spread_degrees = c.spread_degrees - 2
     shot_effects.recoil_knockback = shot_effects.recoil_knockback + 2.0
+  end,
+}, {
+  id = "DW_LIQUID_SHOT_CHAOS",
+  name = "$action_dw_liquid_shot_chaos",
+  description = "$actiondesc_dw_liquid_shot_chaos",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_chaos.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_chaos.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "3,4,5,6",
+  spawn_probability = "0.2,0.3,0.4,0.5",
+  price = 150,
+  mana = 20,
+  action = function()
+    SetRandomSeed(GameGetFrameNum(), GameGetFrameNum() + 2345)
+    local entity_number = Random(1, 10)
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/liquid_shot_chaos_" .. tostring(entity_number) .. ".xml")
+    c.fire_rate_wait = c.fire_rate_wait + Random(-15, 10)
+    c.spread_degrees = c.spread_degrees + Random(-5, 5)
+    c.damage_critical_chance = c.damage_critical_chance + Random(-35, 50)
   end,
 }, {
   id = "DW_LIQUID_SHOT_CHARM",

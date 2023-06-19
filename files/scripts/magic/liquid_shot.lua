@@ -48,6 +48,17 @@ elseif material_name == "poison" or material_name == "cloud_radioactive" or mate
   new_card_entity_id = alter_to("DW_LIQUID_SHOT_TOXIC", liquid_card_entity_id)
 elseif material_name == "water" or material_name == "water_temp" or material_name == "water_swamp" or material_name == "water_fading" or material_name == "water_salt" or material_name == "water_ice" then
   new_card_entity_id = alter_to("DW_LIQUID_SHOT_WATER", liquid_card_entity_id)
+elseif material_name == "magic_liquid_random_polymorph" or material_name == "magic_liquid_unstable_polymorph" or material_name == "magic_liquid_random_polymorph" then
+  new_card_entity_id = alter_to("DW_LIQUID_SHOT_CHAOS", liquid_card_entity_id)
+elseif material_name == "magic_liquid_faster_levitation" or material_name == "magic_liquid_movement_faster" or material_name == "magic_liquid_faster_levitation_and_movement" then
+  -- 速
+  return
+elseif material_name == "magic_liquid_berserk" then
+  -- 怒
+  return
+elseif material_name == "" then
+  -- 猛
+  return
 else
   -- NOTE: If material isn't target material, Card shoud not have material id
   return
