@@ -68,6 +68,8 @@ action_dw_liquid_shot_soft,Liquid shot [Soft],,,,,,,,,リキッドショット[�
 actiondesc_dw_liquid_shot_soft,"Utilizes the power of slime, elastic projectile",,,,,,,,,スライムを利用する、弾力性の放射物,,,,,
 action_dw_liquid_shot_speed,Liquid shot [Speed],,,,,,,,,リキッドショット[速],,,,,
 actiondesc_dw_liquid_shot_speed,"Utilizes the power of acceleration, high-speed projectile",,,,,,,,,加速力を利用する、高速な放射物,,,,,
+action_dw_liquid_shot_teleport,Liquid shot [Teleport],,,,,,,,,リキッドショット[転],,,,,
+actiondesc_dw_liquid_shot_teleport,"Utilizes the fusion of magic and science, teleportable projectile.",,,,,,,,,魔法科学を利用する、転移可能な放射物,,,,,
 action_dw_liquid_shot_toxic,Liquid shot [Toxic],,,,,,,,,リキッドショット[毒],,,,,
 actiondesc_dw_liquid_shot_toxic,"Utilizes the power of poison, dirty projectile",,,,,,,,,毒の力を利用する、汚れた放射物,,,,,
 action_dw_liquid_shot_unstable,Liquid shot [Unstable],,,,,,,,,リキッドショット[揺],,,,,

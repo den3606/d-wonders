@@ -39,46 +39,32 @@ elseif material_name == "magic_liquid_charm" or material_name == "porridge" then
 elseif material_name == "material_darkness" or material_name == "void_liquid" then
   new_card_entity_id = alter_to("DW_LIQUID_SHOT_DARK", liquid_card_entity_id)
 elseif material_name == "magic_liquid_worm_attractor" or material_name == "blood_worm" then
-  -- 蟲
-  -- ライト効果
   new_card_entity_id = alter_to("DW_LIQUID_SHOT_INSECT", liquid_card_entity_id)
 elseif material_name == "lava" then
   new_card_entity_id = alter_to("DW_LIQUID_SHOT_LAVA", liquid_card_entity_id)
-elseif material_name == "magic_liquid_mana_regeneration" or material_name == "magic_liquid_unstable_teleportation" or material_name == "magic_liquid_teleportation" or material_name == "cloud_blood" or
-  material_name == "magic_liquid_invisibility" or material_name == "plasma_fading_bright" or material_name == "plasma_fading" then
+elseif material_name == "magic_liquid_mana_regeneration" or material_name == "magic_liquid_invisibility" or material_name == "plasma_fading_bright" or material_name == "plasma_fading" or material_name ==
+  "midas_precursor" or material_name == "midas" then
   new_card_entity_id = alter_to("DW_LIQUID_SHOT_MANA", liquid_card_entity_id)
 elseif material_name == "oil" then
   new_card_entity_id = alter_to("DW_LIQUID_SHOT_OIL", liquid_card_entity_id)
 elseif material_name == "poison" or material_name == "cursed_liquid" then
-  -- 猛
-  -- 毒強化
   new_card_entity_id = alter_to("DW_LIQUID_SHOT_POISON", liquid_card_entity_id)
 elseif material_name == "slime" or material_name == "slime_green" or material_name == "slime_yellow" or material_name == "cloud_slime" or material_name == "slush" or material_name == "peat" or
-material_name == "pea_soup" then
--- バウンドする
--- 時間延長
-new_card_entity_id = alter_to("DW_LIQUID_SHOT_SOFT", liquid_card_entity_id)
+  material_name == "pea_soup" then
+  new_card_entity_id = alter_to("DW_LIQUID_SHOT_SOFT", liquid_card_entity_id)
 elseif material_name == "magic_liquid_faster_levitation" or material_name == "magic_liquid_movement_faster" or material_name == "magic_liquid_faster_levitation_and_movement" then
-  -- 速
-  -- 加速＋拡散減少　火力弱め + 若干の時間減少
   new_card_entity_id = alter_to("DW_LIQUID_SHOT_SPEED", liquid_card_entity_id)
-
-elseif material_name == "cloud_radioactive" or material_name == "radioactive_liquid_yellow" or material_name == "radioactive_liquid_fading" or material_name ==
-  "radioactive_liquid" then
+elseif material_name == "magic_liquid_unstable_teleportation" or material_name == "magic_liquid_teleportation" then
+  new_card_entity_id = alter_to("DW_LIQUID_SHOT_TELEPORT", liquid_card_entity_id)
+elseif material_name == "cloud_radioactive" or material_name == "radioactive_liquid_yellow" or material_name == "radioactive_liquid_fading" or material_name == "radioactive_liquid" then
   new_card_entity_id = alter_to("DW_LIQUID_SHOT_TOXIC", liquid_card_entity_id)
 elseif material_name == "water" or material_name == "water_temp" or material_name == "water_swamp" or material_name == "water_fading" or material_name == "water_salt" or material_name == "water_ice" or
   material_name == "creepy_liquid" then
   new_card_entity_id = alter_to("DW_LIQUID_SHOT_WATER", liquid_card_entity_id)
 elseif material_name == "magic_liquid_random_polymorph" or material_name == "magic_liquid_unstable_polymorph" or material_name == "magic_liquid_random_polymorph" then
-  -- 他のLIQUID_SHOTを出力する
   new_card_entity_id = alter_to("DW_LIQUID_SHOT_CHAOS", liquid_card_entity_id)
 elseif material_name == "material_confusion" or material_name == "material_rainbow" or material_name == "alcohol" or material_name == "juhannussima" or material_name == "sima" then
-  -- 揺
-  -- 不安定なリキッドショット、他のリキッドショットに変換できる
-  -- CHAOSの効果をこっちに移す
-
   new_card_entity_id = alter_to("DW_LIQUID_SHOT_UNSTABLE", liquid_card_entity_id)
-
 else
   -- NOTE: If material isn't target material, Card shoud not have material id
   return
