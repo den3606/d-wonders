@@ -16,8 +16,13 @@
     mouse_look_buffer="1">
   </CharacterPlatformingComponent>
   <ControlsComponent enabled="0"></ControlsComponent>
+  <GenomeDataComponent
+    herd_id="helpless"
+    food_chain_rank="20"
+    is_predator="0" >
+  </GenomeDataComponent>
   <DamageModelComponent
-      hp="1"
+      hp="3"
       materials_create_messages="1"
       ragdoll_material="steel"
 			blood_material="oil"
@@ -61,8 +66,8 @@
     _enabled="1"
     lob_min="0.9"
     lob_max="1.0"
-    speed_min="250"
-    speed_max="300"
+    speed_min="200"
+    speed_max="230"
     friction="0.6"
     direction_random_rad="0.05"
     on_death_explode="0"
