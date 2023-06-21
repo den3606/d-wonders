@@ -178,13 +178,7 @@
     event_root="player_projectiles/swapper"
   ></AudioComponent>
   <LuaComponent
-    script_source_file="mods/d-wonders/files/scripts/projectiles/bomb_plane.lua"
-    execute_every_n_frame="5"
-    remove_after_executed="1"
-  >
-  </LuaComponent>
-  <LuaComponent
-    script_source_file="mods/d-wonders/files/scripts/projectiles/bomb_plane_minimum_speed.lua"
+    script_source_file="mods/d-wonders/files/scripts/projectiles/plane_minimum_speed.lua"
     execute_every_n_frame="1"
   >
   </LuaComponent>
