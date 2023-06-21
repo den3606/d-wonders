@@ -22,7 +22,7 @@
     is_predator="0" >
   </GenomeDataComponent>
   <DamageModelComponent
-      hp="3"
+      hp="4"
       materials_create_messages="1"
       ragdoll_material="steel"
 			blood_material="oil"
