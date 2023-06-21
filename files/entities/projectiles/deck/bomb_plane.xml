@@ -12,7 +12,7 @@
     </SpriteComponent>
   </Base>
   <LuaComponent
-    script_source_file="mods/d-wonders/files/scripts/projectiles/bomb_plane.lua"
+    script_source_file="mods/d-wonders/files/scripts/projectiles/bomb_plane_horizontal.lua"
     execute_every_n_frame="5"
     remove_after_executed="1"
   >
