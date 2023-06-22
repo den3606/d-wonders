@@ -1,6 +1,4 @@
 <Entity tags="mortal,prey,hittable,projectile_player" name="$projectile_default">
-  <Base file="data/entities/base_projectile.xml" >
-	</Base>
   <Base file="mods/d-wonders/files/entities/projectiles/base_plane.xml" >
   </Base>
   <SpriteComponent

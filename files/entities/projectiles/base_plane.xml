@@ -76,7 +76,7 @@
     ragdoll_force_multiplier="0.04"
     hit_particle_force_multiplier="5.5"
     camera_shake_when_shot="5.0"
-    bounces_left="4"
+    bounces_left="2"
     shoot_light_flash_radius="0"
 	  shoot_light_flash_r="255"
     shoot_light_flash_g="240"

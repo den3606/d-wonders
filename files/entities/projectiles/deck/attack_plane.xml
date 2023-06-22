@@ -1,13 +1,17 @@
-<Entity tags="mortal,prey,hittable,projectile_player" name="$projectile_default">
+<Entity tags="mortal,prey,hittable,projectile_player,dw_attack_plane" name="$projectile_default">
   <!-- <HomingComponent
 		homing_targeting_coeff="60.0"
 		homing_velocity_multiplier="0.95"
     detect_distance="150"
 	> -->
   <!-- </HomingComponent> -->
-  <Base file="data/entities/base_projectile.xml" >
-	</Base>
   <Base file="mods/d-wonders/files/entities/projectiles/base_plane.xml" >
+    <VelocityComponent
+      gravity_y="400"
+      air_friction="0"
+      mass="2"
+	  >
+    </VelocityComponent>
     <ProjectileComponent
       speed_min="300"
       speed_max="310"

@@ -21,11 +21,11 @@ end
 local velocity_component_id = EntityGetFirstComponentIncludingDisabled(attack_plane_entity_id, "VelocityComponent")
 local vel_x, vel_y = ComponentGetValue2(velocity_component_id, "mVelocity")
 
-local distance = math.sqrt((projectile_x - vel_x) ^ 2 + (projectile_y - vel_y) ^ 2)
+local distance = math.sqrt(vel_x ^ 2 + vel_y ^ 2)
 local normalized_vel_x = vel_x / distance
 local normalized_vel_y = vel_y / distance
-local r = 950
-local ejection_port_x = projectile_x + normalized_vel_x * r
-local ejection_port_y = projectile_y + normalized_vel_y * r
+local r = 11
+local ejection_port_x = math.ceil(projectile_x + normalized_vel_x * r)
+local ejection_port_y = math.ceil(projectile_y + normalized_vel_y * r)
 
-shoot_projectile(shooter_entity_id, "data/entities/projectiles/deck/machinegun_bullet.xml", ejection_port_x, ejection_port_y, vel_x * 4, vel_y * 4)
+shoot_projectile(shooter_entity_id, "mods/d-wonders/files/entities/projectiles/attack_plane_minigun.xml", ejection_port_x, ejection_port_y, vel_x * 4, vel_y * 4)
