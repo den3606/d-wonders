@@ -504,6 +504,10 @@ local original_actions = {{
     c.fire_rate_wait = c.fire_rate_wait + Random(-15, 10)
     c.spread_degrees = c.spread_degrees + Random(-5, 5)
     c.damage_critical_chance = c.damage_critical_chance + Random(-35, 50)
+
+    c.damage_drill_add = c.damage_drill_add + Random(1, 10) * 0.01
+    c.damage_slice_add = c.damage_slice_add + Random(1, 10) * 0.01
+    c.damage_melee_add = c.damage_melee_add + Random(1, 10) * 0.01
   end,
 }, {
   id = "DW_LIQUID_SHOT_CHARM",
@@ -760,6 +764,88 @@ local original_actions = {{
   action = function()
     add_projectile("mods/d-wonders/files/entities/projectiles/deck/attack_plane.xml")
     c.fire_rate_wait = c.fire_rate_wait + 20
+  end,
+}, {
+  id = "DW_DEPENDENT_BOLT",
+  name = "$action_dw_dependent_bolt",
+  description = "$actiondesc_dw_dependent_bolt",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/dependent_bolt.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/dependent_bolt.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "1,2,3,4",
+  spawn_probability = "0.5,0.8,1,1",
+  price = 150,
+  mana = 60,
+  max_uses = 15,
+  action = function()
+    c.fire_rate_wait = c.fire_rate_wait + 30
+    current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE + 10
+    c.spread_degrees = c.spread_degrees + 10
+    if c.damage_melee_add > 0 then
+      add_projectile("data/entities/projectiles/deck/tentacle.xml")
+    end
+    if c.damage_projectile_add > 0 then
+      add_projectile("data/entities/projectiles/deck/laser.xml")
+    end
+    if c.damage_electricity_add > 0 then
+      add_projectile("data/entities/projectiles/deck/lightning.xml")
+    end
+    if c.damage_fire_add > 0 then
+      add_projectile("data/entities/projectiles/deck/grenade.xml")
+    elseif c.damage_fire_add > 1 then
+      add_projectile("data/entities/projectiles/deck/meteor.xml")
+    end
+    if c.damage_explosion_add > 0 then
+      add_projectile("data/entities/projectiles/deck/glitter_bomb.xml")
+    elseif c.damage_explosion_add > 1 then
+      add_projectile("data/entities/projectiles/bomb_holy.xml")
+    end
+
+    if c.damage_ice_add > 0 then
+      add_projectile("data/entities/projectiles/deck/iceball.xml")
+    elseif c.damage_ice_add > 0.5 then
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      add_projectile("data/entities/projectiles/deck/freezing_gaze_beam.xml")
+      c.pattern_degrees = 20
+    elseif c.damage_ice_add > 1 then
+      add_projectile("mods/d-wonders/files/entities/projectiles/deck/frozen_field.xml")
+    end
+
+    if c.damage_slice_add > 0 then
+      add_projectile("data/entities/projectiles/deck/disc_bullet_big.xml")
+
+    elseif c.damage_slice_add > 0.4 then
+      add_projectile("data/entities/projectiles/deck/disc_bullet_bigger.xml")
+    end
+
+    if c.damage_healing_add > 0 then
+      add_projectile("data/entities/projectiles/deck/heal_bullet.xml")
+    elseif c.damage_healing_add > 0.4 then
+      add_projectile("data/entities/projectiles/deck/regeneration_field.xml")
+    end
+
+    if c.damage_curse_add > 0 then
+      add_projectile("data/entities/projectiles/orb_cursed.xml")
+    elseif c.damage_curse_add > 0.4 then
+      add_projectile("mods/d-wonders/files/entities/projectiles/deck/liquid_shot_dark.xml")
+    end
+
+    if c.damage_drill_add > 0 then
+      add_projectile("data/entities/projectiles/deck/lance.xml")
+    elseif c.damage_drill_add > 0.4 then
+      add_projectile("data/entities/projectiles/deck/orb_laseremitter_cutter.xml")
+      c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_disintegrated.xml,"
+    end
   end,
 }, {
   id = "DW_SHOOTINGSTAR",
