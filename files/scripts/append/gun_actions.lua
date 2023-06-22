@@ -784,17 +784,49 @@ local original_actions = {{
     if c.damage_melee_add > 0 then
       add_projectile("data/entities/projectiles/deck/tentacle.xml")
     end
-    if c.damage_projectile_add > 0 then
-      add_projectile("data/entities/projectiles/deck/laser.xml")
+    if c.damage_projectile_add > 1 then
+      add_projectile("data/entities/projectiles/deck/chain_bolt.xml")
+      add_projectile("data/entities/projectiles/deck/chain_bolt.xml")
+      c.pattern_degrees = 10
+    elseif c.damage_fire_add > 1 then
+      add_projectile("data/entities/projectiles/thunderball.xml")
+
     end
     if c.damage_electricity_add > 0 then
       add_projectile("data/entities/projectiles/deck/lightning.xml")
+    elseif c.damage_fire_add > 1 then
+      add_projectile("data/entities/projectiles/thunderball.xml")
+    else
+      local electric_words = {"electric"}
+      local has_electric_spell = false
+      for _, word in ipairs(electric_words) do
+        if string.find(c.extra_entities, word) or string.find(c.game_effect_entities, word) then
+          has_electric_spell = true
+          break
+        end
+        if has_electric_spell then
+          add_projectile("data/entities/projectiles/deck/ball_lightning.xml")
+        end
+      end
     end
     if c.damage_fire_add > 0 then
       add_projectile("data/entities/projectiles/deck/grenade.xml")
     elseif c.damage_fire_add > 1 then
       add_projectile("data/entities/projectiles/deck/meteor.xml")
+    else
+      local fire_words = {"fire"}
+      local has_fire_spell = false
+      for _, word in ipairs(fire_words) do
+        if string.find(c.extra_entities, word) or string.find(c.game_effect_entities, word) then
+          has_fire_spell = true
+          break
+        end
+        if has_fire_spell then
+          add_projectile("data/entities/projectiles/deck/grenade.xml")
+        end
+      end
     end
+
     if c.damage_explosion_add > 0 then
       add_projectile("data/entities/projectiles/deck/glitter_bomb.xml")
     elseif c.damage_explosion_add > 1 then
@@ -819,6 +851,18 @@ local original_actions = {{
       c.pattern_degrees = 20
     elseif c.damage_ice_add > 1 then
       add_projectile("mods/d-wonders/files/entities/projectiles/deck/frozen_field.xml")
+    else
+      local ice_words = {"freeze", "frozen", "ice"}
+      local has_ice_spell = false
+      for _, word in ipairs(ice_words) do
+        if string.find(c.extra_entities, word) or string.find(c.game_effect_entities, word) then
+          has_ice_spell = true
+          break
+        end
+        if has_ice_spell then
+          add_projectile("data/entities/projectiles/deck/iceball.xml")
+        end
+      end
     end
 
     if c.damage_slice_add > 0 then
@@ -838,6 +882,18 @@ local original_actions = {{
       add_projectile("data/entities/projectiles/orb_cursed.xml")
     elseif c.damage_curse_add > 0.4 then
       add_projectile("mods/d-wonders/files/entities/projectiles/deck/liquid_shot_dark.xml")
+    else
+      local cursed_words = {"poison", "curse"}
+      local has_cursed_spell = false
+      for _, word in ipairs(cursed_words) do
+        if string.find(c.extra_entities, word) or string.find(c.game_effect_entities, word) then
+          has_cursed_spell = true
+          break
+        end
+        if has_cursed_spell then
+          add_projectile("data/entities/projectiles/orb_cursed.xml")
+        end
+      end
     end
 
     if c.damage_drill_add > 0 then
