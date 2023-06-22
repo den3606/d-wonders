@@ -172,3 +172,21 @@
 --     table.remove(deck, 1)
 --     draw_actions(1, true)
 --   end,
+-- {
+--   id = "DW_ANONYMIZATION",
+--   name = "$action_dw_anonymization",
+--   description = "$actiondesc_dw_anonymization",
+--   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/anonymization.png",
+--   related_extra_entities = {"mods/d-wonders/files/entities/misc/anonymization.xml"},
+--   type = ACTION_TYPE_MODIFIER,
+--   spawn_level = "3,4,5",
+--   spawn_probability = "0.8,0.8,0.8",
+--   price = 40,
+--   mana = 40,
+--   max_uses = 40,
+--   never_unlimited = true,
+--   action = function()
+--     c.extra_entities = c.extra_entities .. "mods/d-wonders/files/entities/misc/anonymization.xml,"
+--     draw_actions(1, true)
+--   end,
+-- },
