@@ -780,7 +780,7 @@ local original_actions = {{
   action = function()
     c.fire_rate_wait = c.fire_rate_wait + 30
     current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE + 10
-    c.spread_degrees = c.spread_degrees + 10
+    c.spread_degrees = c.spread_degrees + 5
     if c.damage_melee_add > 0 then
       add_projectile("data/entities/projectiles/deck/tentacle.xml")
     end
@@ -804,9 +804,9 @@ local original_actions = {{
           has_electric_spell = true
           break
         end
-        if has_electric_spell then
-          add_projectile("data/entities/projectiles/deck/ball_lightning.xml")
-        end
+      end
+      if has_electric_spell then
+        add_projectile("data/entities/projectiles/deck/ball_lightning.xml")
       end
     end
     if c.damage_fire_add > 0 then
@@ -817,13 +817,16 @@ local original_actions = {{
       local fire_words = {"fire"}
       local has_fire_spell = false
       for _, word in ipairs(fire_words) do
+        print(word)
+        print(c.extra_entities)
+        print(c.game_effect_entities)
         if string.find(c.extra_entities, word) or string.find(c.game_effect_entities, word) then
           has_fire_spell = true
           break
         end
-        if has_fire_spell then
-          add_projectile("data/entities/projectiles/deck/grenade.xml")
-        end
+      end
+      if has_fire_spell then
+        add_projectile("data/entities/projectiles/deck/grenade.xml")
       end
     end
 
@@ -859,9 +862,9 @@ local original_actions = {{
           has_ice_spell = true
           break
         end
-        if has_ice_spell then
-          add_projectile("data/entities/projectiles/deck/iceball.xml")
-        end
+      end
+      if has_ice_spell then
+        add_projectile("data/entities/projectiles/deck/iceball.xml")
       end
     end
 
@@ -890,9 +893,9 @@ local original_actions = {{
           has_cursed_spell = true
           break
         end
-        if has_cursed_spell then
-          add_projectile("data/entities/projectiles/orb_cursed.xml")
-        end
+      end
+      if has_cursed_spell then
+        add_projectile("data/entities/projectiles/orb_cursed.xml")
       end
     end
 
