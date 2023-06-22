@@ -736,10 +736,11 @@ local original_actions = {{
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/bomb_plane.png",
   related_projectiles = {"mods/d-wonders/files/entities/projectiles/bomb_plane.xml"},
   type = ACTION_TYPE_PROJECTILE,
-  spawn_level = "2,3,4,5",
-  spawn_probability = "0.5,0.8,1,1",
+  spawn_level = "3,4,5",
+  spawn_probability = "0.8,1,1",
   price = 200,
   mana = 120,
+  max_uses = 15,
   action = function()
     add_projectile("mods/d-wonders/files/entities/projectiles/deck/bomb_plane.xml")
     c.fire_rate_wait = c.fire_rate_wait + 30
@@ -755,6 +756,7 @@ local original_actions = {{
   spawn_probability = "0.5,0.8,1,1",
   price = 150,
   mana = 90,
+  max_uses = 30,
   action = function()
     add_projectile("mods/d-wonders/files/entities/projectiles/deck/attack_plane.xml")
     c.fire_rate_wait = c.fire_rate_wait + 20
