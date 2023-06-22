@@ -2,15 +2,15 @@
   <Base file="data/entities/base_projectile.xml" >
 	</Base>
   <Base file="mods/d-wonders/files/entities/projectiles/base_plane.xml" >
-    <SpriteComponent
+  </Base>
+  <SpriteComponent
       _enabled="1"
       alpha="1"
       image_file="mods/d-wonders/files/projectiles_gfx/bomb_plane.xml"
       next_rect_animation=""
       rect_animation=""
     >
-    </SpriteComponent>
-  </Base>
+  </SpriteComponent>
   <LuaComponent
     script_source_file="mods/d-wonders/files/scripts/projectiles/bomb_plane_horizontal.lua"
     execute_every_n_frame="5"

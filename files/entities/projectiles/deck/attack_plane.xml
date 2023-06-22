@@ -1,0 +1,51 @@
+<Entity tags="mortal,prey,hittable,projectile_player" name="$projectile_default">
+  <!-- <HomingComponent
+		homing_targeting_coeff="60.0"
+		homing_velocity_multiplier="0.95"
+    detect_distance="150"
+	> -->
+  <!-- </HomingComponent> -->
+  <Base file="data/entities/base_projectile.xml" >
+	</Base>
+  <Base file="mods/d-wonders/files/entities/projectiles/base_plane.xml" >
+    <ProjectileComponent
+      speed_min="300"
+      speed_max="310"
+      velocity_updates_animation="0.5"
+      velocity_sets_rotation="1"
+    >
+    </ProjectileComponent>
+  </Base>
+  <SpriteComponent
+      _enabled="0"
+      _tags="dw_attack_plane.right"
+      alpha="1"
+      image_file="mods/d-wonders/files/projectiles_gfx/attack_plane.xml"
+      next_rect_animation=""
+      rect_animation=""
+    >
+  </SpriteComponent>
+  <SpriteComponent
+        _enabled="0"
+        _tags="dw_attack_plane.left"
+        alpha="1"
+        image_file="mods/d-wonders/files/projectiles_gfx/attack_plane_left.xml"
+        next_rect_animation=""
+        rect_animation=""
+      >
+  </SpriteComponent>
+  <LuaComponent
+    script_source_file="mods/d-wonders/files/scripts/projectiles/attack_plane_direction.lua"
+    execute_times="1"
+    remove_after_executed="1"
+  />
+  <LuaComponent
+    script_source_file="mods/d-wonders/files/scripts/projectiles/attack_plane_minigun.lua"
+    execute_every_n_frame="3"
+  >
+    <VariableStorageComponent
+		name="projectile_file"
+		value_string="mods/d-wonders/files/entities/projectiles/deck/attack_plane.xml"
+  >
+	</VariableStorageComponent>
+  </Entity>

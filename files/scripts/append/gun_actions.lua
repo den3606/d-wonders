@@ -745,6 +745,21 @@ local original_actions = {{
     c.fire_rate_wait = c.fire_rate_wait + 30
   end,
 }, {
+  id = "DW_ATTACK_PLANE",
+  name = "$action_dw_attack_plane",
+  description = "$actiondesc_dw_attack_plane",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/attack_plane.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/attack_plane.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "1,2,3,4",
+  spawn_probability = "0.5,0.8,1,1",
+  price = 150,
+  mana = 90,
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/attack_plane.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 20
+  end,
+}, {
   id = "DW_SHOOTINGSTAR",
   name = "$action_dw_shootingstar",
   description = "$actiondesc_dw_shootingstar",
