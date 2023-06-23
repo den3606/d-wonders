@@ -414,7 +414,7 @@ local original_actions = {{
   name = "$action_dw_liquid_shot",
   description = "$actiondesc_dw_liquid_shot",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/liquid_shot.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "0,1,2,3,4,5,6",
   spawn_probability = "1,1,1,1,1,1,1",
@@ -431,7 +431,7 @@ local original_actions = {{
   name = "$action_dw_liquid_shot_acid",
   description = "$actiondesc_dw_liquid_shot_acid",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_acid.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_acid.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/liquid_shot_acid.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "5,6",
   spawn_probability = "0.5,0.5",
@@ -449,7 +449,7 @@ local original_actions = {{
   name = "$action_dw_liquid_shot_angry",
   description = "$actiondesc_dw_liquid_shot_angry",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_angry.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_angry.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/liquid_shot_angry.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "3,4,5",
   spawn_probability = "0.5,0.5,0.5",
@@ -470,7 +470,7 @@ local original_actions = {{
   name = "$action_dw_liquid_shot_blood",
   description = "$actiondesc_dw_liquid_shot_blood",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_blood.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_blood.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/liquid_shot_blood.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "2,3,4,5,6",
   spawn_probability = "0.5,0.5,0.5,0.5,0.5",
@@ -489,7 +489,7 @@ local original_actions = {{
   name = "$action_dw_liquid_shot_chaos",
   description = "$actiondesc_dw_liquid_shot_chaos",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_chaos.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_chaos.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/liquid_shot_chaos_7.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "3,4,5,6",
   spawn_probability = "0.2,0.3,0.4,0.5",
@@ -513,7 +513,7 @@ local original_actions = {{
   name = "$action_dw_liquid_shot_charm",
   description = "$actiondesc_dw_liquid_shot_charm",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_charm.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_charm.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/liquid_shot_charm.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "2,4,5,6",
   spawn_probability = "0.1,0.1,0.5,0.5",
@@ -531,7 +531,7 @@ local original_actions = {{
   name = "$action_dw_liquid_shot_dark",
   description = "$actiondesc_dw_liquid_shot_dark",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_dark.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_dark.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/liquid_shot_dark.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "5,6",
   spawn_probability = "0.5,0.5",
@@ -550,7 +550,7 @@ local original_actions = {{
   name = "$action_dw_liquid_shot_insect",
   description = "$actiondesc_dw_liquid_shot_insect",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_insect.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_insect.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/liquid_shot_insect.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "0,2,3,4",
   spawn_probability = "0.5,0.5,0.5,0.5",
@@ -566,7 +566,7 @@ local original_actions = {{
   name = "$action_dw_liquid_shot_lava",
   description = "$actiondesc_dw_liquid_shot_lava",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_lava.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_lava.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/liquid_shot_lava.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "5,6",
   spawn_probability = "0.5,0.5",
@@ -586,7 +586,7 @@ local original_actions = {{
   name = "$action_dw_liquid_shot_mana",
   description = "$actiondesc_dw_liquid_shot_mana",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_mana.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_mana.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/liquid_shot_mana.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "2,4,6",
   spawn_probability = "0.5,0.5,0.5",
@@ -602,7 +602,7 @@ local original_actions = {{
   name = "$action_dw_liquid_shot_oil",
   description = "$actiondesc_dw_liquid_shot_oil",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_oil.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_oil.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/liquid_shot_oil.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "1,2,3,4",
   spawn_probability = "0.2,0.4,0.4,0.4",
@@ -619,7 +619,7 @@ local original_actions = {{
   name = "$action_dw_liquid_shot_poison",
   description = "$actiondesc_dw_liquid_shot_poison",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_poison.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_poison.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/liquid_shot_poison.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "4,5,6",
   spawn_probability = "0.3,0.4,0.5",
@@ -636,7 +636,7 @@ local original_actions = {{
   name = "$action_dw_liquid_shot_soft",
   description = "$actiondesc_dw_liquid_shot_soft",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_soft.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_soft.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/liquid_shot_soft.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "3,4",
   spawn_probability = "0.5,0.5",
@@ -653,7 +653,7 @@ local original_actions = {{
   name = "$action_dw_liquid_shot_speed",
   description = "$actiondesc_dw_liquid_shot_speed",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_speed.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_speed.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/liquid_shot_speed.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "3,4",
   spawn_probability = "0.5,0.5",
@@ -672,7 +672,7 @@ local original_actions = {{
   name = "$action_dw_liquid_shot_teleport",
   description = "$actiondesc_dw_liquid_shot_teleport",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_teleport.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_teleport.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/liquid_shot_teleport.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "0,1,3,4",
   spawn_probability = "0.1,0.1,0.5,0.5",
@@ -689,7 +689,7 @@ local original_actions = {{
   name = "$action_dw_liquid_shot_toxic",
   description = "$actiondesc_dw_liquid_shot_toxic",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_toxic.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_toxic.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/liquid_shot_toxic.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "2,3,4,5",
   spawn_probability = "0.2,0.3,0.4,0.5",
@@ -706,7 +706,7 @@ local original_actions = {{
   name = "$action_dw_liquid_shot_unstable",
   description = "$actiondesc_dw_liquid_shot_unstable",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_unstable.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_unstable.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/liquid_shot_unstable.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "99",
   spawn_probability = "0",
@@ -721,7 +721,7 @@ local original_actions = {{
   name = "$action_dw_liquid_shot_water",
   description = "$actiondesc_dw_liquid_shot_water",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/liquid_shot_water.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/liquid_shot_water.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/liquid_shot_water.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "0,1,2,3",
   spawn_probability = "0.5,0.5,0.5,0.5",
@@ -737,7 +737,7 @@ local original_actions = {{
   name = "$action_dw_bomb_plane",
   description = "$actiondesc_dw_bomb_plane",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/bomb_plane.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/bomb_plane.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/bomb_plane.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "3,4,5",
   spawn_probability = "0.8,1,1",
@@ -753,7 +753,7 @@ local original_actions = {{
   name = "$action_dw_attack_plane",
   description = "$actiondesc_dw_attack_plane",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/attack_plane.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/attack_plane.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/attack_plane.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "1,2,3,4",
   spawn_probability = "0.5,0.8,1,1",
@@ -769,6 +769,7 @@ local original_actions = {{
   name = "$action_dw_dependent_bolt",
   description = "$actiondesc_dw_dependent_bolt",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/dependent_bolt.png",
+  -- BUG SHOTにする
   related_projectiles = {"mods/d-wonders/files/entities/projectiles/dependent_bolt.xml"},
   type = ACTION_TYPE_PROJECTILE,
   spawn_level = "1,2,3,4,5",
@@ -931,7 +932,7 @@ local original_actions = {{
   name = "$action_dw_spin_path",
   description = "$actiondesc_dw_spin_path",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/spin_path.png",
-  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/spin_path.xml"},
+  related_projectiles = {"mods/d-wonders/files/entities/misc/spin_path.xml"},
   type = ACTION_TYPE_MODIFIER,
   spawn_level = "2,4,6",
   spawn_probability = "1,1,1",
@@ -965,7 +966,6 @@ local original_actions = {{
   name = "$action_dw_damage_reverser_ice",
   description = "$actiondesc_dw_damage_reverser_ice",
   sprite = "mods/d-wonders/files/ui_gfx/gun_actions/damage_reverser_ice.png",
-  related_extra_entities = {"mods/d-wonders/files/entities/misc/damage_reverser_ice.xml"},
   type = ACTION_TYPE_MODIFIER,
   spawn_level = "1,2,3,4",
   spawn_probability = "0.1,0.1,0.1,0.1",
@@ -1052,6 +1052,11 @@ local original_actions = {{
       return
     end
 
+    if #card.related_projectiles == 0 then
+      draw_actions(1, true)
+      return
+    end
+
     local target_entity_id = EntityLoad(card.related_projectiles[1])
 
     -- NOTE: This process maybe unnecessary
@@ -1125,7 +1130,20 @@ local original_actions = {{
       end
     end
 
+    local explode_on_damage_component_ids = EntityGetComponentIncludingDisabled(target_entity_id, "ExplodeOnDamageComponent") or {}
+    for _, explode_on_damage_component_id in ipairs(explode_on_damage_component_ids) do
+      ComponentSetValue2(explode_on_damage_component_id, "explode_on_death_percent", 0)
+      ComponentSetValue2(explode_on_damage_component_id, "explode_on_damage_percent", 0)
+    end
+
+    local explosion_component_ids = EntityGetComponentIncludingDisabled(target_entity_id, "ExplosionComponent") or {}
+    for _, explosion_component_id in ipairs(explosion_component_ids) do
+      -- HACK: I would actually prefer "NONE" But THis Enum don't have it.
+      ComponentSetValue2(explosion_component_id, "trigger", "ON_CREATE")
+    end
+
     for _, component_id in ipairs(EntityGetAllComponents(target_entity_id)) do
+      EntityRemoveTag(target_entity_id, "enabled_in_world")
       EntityRemoveComponent(target_entity_id, component_id)
     end
     EntityKill(target_entity_id)
