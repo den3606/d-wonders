@@ -206,8 +206,7 @@ local original_actions = {{
   spawn_probability = "0.1,0.1,0.2,0.3,0.4",
   price = 120,
   mana = 100,
-  max_uses = 5,
-  never_unlimited = true,
+  max_uses = 10,
   action = function()
     add_projectile("mods/d-wonders/files/entities/projectiles/deck/blood_balloon.xml")
     c.trail_material = c.trail_material .. "blood,"
