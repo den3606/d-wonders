@@ -1028,6 +1028,114 @@ local original_actions = {{
     c.fire_rate_wait = c.fire_rate_wait + 30
   end,
 }, {
+  id = "DW_SPELL_VACUUM",
+  name = "$action_dw_spell_vacuum",
+  description = "$actiondesc_dw_spell_vacuum",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/spell_vacuum.png",
+  type = ACTION_TYPE_OTHER,
+  spawn_level = "3,4,5,6,10",
+  spawn_probability = "0.2,0.2,0.7,1,1",
+  price = 250,
+  mana = 30,
+  action = function()
+    local card = nil
+    if (#deck > 0) then
+      card = deck[1]
+    end
+
+    if card == nil then
+      draw_actions(1, true)
+      return
+    end
+
+    if card.type ~= ACTION_TYPE_PROJECTILE then
+      draw_actions(1, true)
+      return
+    end
+
+    local target_entity_id = EntityLoad(card.related_projectiles[1])
+
+    -- NOTE: This process maybe unnecessary
+    local lua_component_ids = EntityGetComponentIncludingDisabled(target_entity_id, "LuaComponent") or {}
+    for _, component_id in ipairs(lua_component_ids) do
+      ComponentSetValue2(component_id, "remove_after_executed", false)
+    end
+
+    for i, component_id in ipairs(EntityGetAllComponents(target_entity_id)) do
+      EntitySetComponentIsEnabled(target_entity_id, component_id, false)
+    end
+
+    local projectile_component_ids = EntityGetComponentIncludingDisabled(target_entity_id, "ProjectileComponent") or {}
+    for _, projectile_component in ipairs(projectile_component_ids) do
+      if projectile_component ~= nil then
+        c.damage_projectile_add = c.damage_projectile_add + (ComponentGetValue2(projectile_component, "damage") or 0)
+        c.damage_explosion_add = c.damage_explosion_add + (ComponentObjectGetValue2(projectile_component, "config_explosion", "damage") or 0)
+        c.explosion_radius = c.explosion_radius + ((ComponentObjectGetValue2(projectile_component, "config_explosion", "explosion_radius") or 0) / 4)
+        c.speed_multiplier = c.speed_multiplier + ((ComponentGetValue2(projectile_component, "speed_max") or 0) / 4)
+        c.lifetime_add = c.lifetime_add + ((ComponentGetValue2(projectile_component, "lifetime") or 0) / 4)
+
+        local slice_damage = (ComponentObjectGetValue2(projectile_component, "damage_by_type", "slice") or 0)
+        local curse_damage = (ComponentObjectGetValue2(projectile_component, "damage_by_type", "curse") or 0)
+        local projectile_damage = (ComponentObjectGetValue2(projectile_component, "damage_by_type", "projectile") or 0)
+        local melee_damage = (ComponentObjectGetValue2(projectile_component, "damage_by_type", "melee") or 0)
+        local ice_damage = (ComponentObjectGetValue2(projectile_component, "damage_by_type", "ice") or 0)
+        local electricity_damage = (ComponentObjectGetValue2(projectile_component, "damage_by_type", "electricity") or 0)
+        local fire_damage = (ComponentObjectGetValue2(projectile_component, "damage_by_type", "fire") or 0)
+        local explosion_damage = (ComponentObjectGetValue2(projectile_component, "damage_by_type", "explosion") or 0)
+        local drill_damage = (ComponentObjectGetValue2(projectile_component, "damage_by_type", "drill") or 0)
+        c.damage_slice_add = c.damage_slice_add + slice_damage
+        c.damage_curse_add = c.damage_curse_add + curse_damage
+        c.damage_projectile_add = c.damage_projectile_add + projectile_damage
+        c.damage_melee_add = c.damage_melee_add + melee_damage
+        c.damage_ice_add = c.damage_ice_add + ice_damage
+        c.damage_electricity_add = c.damage_electricity_add + electricity_damage
+        c.damage_fire_add = c.damage_fire_add + fire_damage
+        c.damage_explosion_add = c.damage_explosion_add + explosion_damage
+        c.damage_drill_add = c.damage_drill_add + drill_damage
+
+        ComponentSetValue2(projectile_component, "on_death_explode", false)
+        ComponentSetValue2(projectile_component, "on_death_gfx_leave_sprite", false)
+        ComponentSetValue2(projectile_component, "on_lifetime_out_explode", false)
+      end
+    end
+
+    local area_damage_component_ids = EntityGetComponentIncludingDisabled(target_entity_id, "AreaDamageComponent") or {}
+    for _, area_damage_component_id in ipairs(area_damage_component_ids) do
+      local damage_type = ComponentGetValue2(area_damage_component_id, "damage_type")
+      local damage_per_frame = ComponentGetValue2(area_damage_component_id, "damage_per_frame")
+      if damage_type ~= nil and damage_per_frame ~= nil then
+        if damage_type == 'DAMAGE_SLICE' then
+          c.damage_slice_add = c.damage_slice_add + damage_per_frame
+        elseif damage_type == 'DAMAGE_CURSE' then
+          c.damage_curse_add = c.damage_curse_add + damage_per_frame
+        elseif damage_type == 'DAMAGE_PROJECTILE' then
+          c.damage_projectile_add = c.damage_projectile_add + damage_per_frame
+        elseif damage_type == 'DAMAGE_MELEE' then
+          c.damage_melee_add = c.damage_melee_add + damage_per_frame
+        elseif damage_type == 'DAMAGE_ICE' then
+          c.damage_ice_add = c.damage_ice_add + damage_per_frame
+        elseif damage_type == 'DAMAGE_ELECTRICITY' then
+          c.damage_electricity_add = c.damage_electricity_add + damage_per_frame
+        elseif damage_type == 'DAMAGE_FIRE' then
+          c.damage_fire_add = c.damage_fire_add + damage_per_frame
+        elseif damage_type == 'DAMAGE_EXPLOSION' then
+          c.damage_explosion_add = c.damage_explosion_add + damage_per_frame
+        elseif damage_type == 'DAMAGE_DRILL' then
+          c.damage_drill_add = c.damage_drill_add + damage_per_frame
+        end
+      end
+    end
+
+    for _, component_id in ipairs(EntityGetAllComponents(target_entity_id)) do
+      EntityRemoveComponent(target_entity_id, component_id)
+    end
+    EntityKill(target_entity_id)
+
+    table.insert(discarded, card)
+    table.remove(deck, 1)
+    draw_actions(1, true)
+  end,
+}, {
   id = "DW_DECREASE_DRAW_2",
   name = "$action_dw_decrease_draw_2",
   description = "$actiondesc_dw_decrease_draw_2",
