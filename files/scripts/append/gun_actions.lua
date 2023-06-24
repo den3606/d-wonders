@@ -1,5 +1,4 @@
 dofile_once("mods/d-wonders/files/scripts/lib/utilities.lua")
-local NXML = dofile_once('mods/d-wonders/files/scripts/lib/luanxml/nxml.lua')
 
 local original_actions = {{
   id = "DW_STACK_BOLT",
@@ -904,6 +903,22 @@ local original_actions = {{
       add_projectile("data/entities/projectiles/deck/orb_laseremitter_cutter.xml")
       c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_disintegrated.xml,"
     end
+  end,
+}, {
+  id = "DW_SOUL_SHOT",
+  name = "$action_dw_soul_shot",
+  description = "$actiondesc_dw_soul_shot",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/soul_shot.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/soul_shot.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "1,2,3,4",
+  spawn_probability = "0.5,0.8,1,1",
+  price = 120,
+  mana = 12,
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/soul_shot.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 15
+    c.spread_degrees = c.spread_degrees + 10
   end,
 }, {
   id = "DW_SHOOTINGSTAR",

@@ -1,0 +1,8 @@
+<Entity>
+  <SpriteComponent
+        _enabled="1"
+        _tags="enabled_in_world"
+        image_file="mods/d-wonders/files/projectiles_gfx/soul_shot_escaped_effect_4.xml"
+        kill_entity_after_finished="1"
+  ></SpriteComponent>
+</Entity>
