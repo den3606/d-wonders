@@ -1,8 +1,0 @@
-<Entity>
-  <LuaComponent
-		_tags="upper_curve_path"
-		script_source_file="mods/d-wonders/files/scripts/projectiles/upper_curve_path.lua"
-		execute_every_n_frame="1"
-		>
-	</LuaComponent>
-</Entity>
