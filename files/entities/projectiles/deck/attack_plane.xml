@@ -41,15 +41,16 @@
   <LuaComponent
     script_source_file="mods/d-wonders/files/scripts/projectiles/attack_plane_direction.lua"
     execute_times="1"
-    remove_after_executed="1"
-  />
+    remove_after_executed="1" >
+  </LuaComponent>
   <LuaComponent
     script_source_file="mods/d-wonders/files/scripts/projectiles/attack_plane_minigun.lua"
     execute_every_n_frame="3"
   >
-    <VariableStorageComponent
+  </LuaComponent>
+  <VariableStorageComponent
 		name="projectile_file"
 		value_string="mods/d-wonders/files/entities/projectiles/deck/attack_plane.xml"
   >
 	</VariableStorageComponent>
-  </Entity>
+</Entity>
