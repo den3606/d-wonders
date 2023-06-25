@@ -19,12 +19,12 @@
 	  explosion_dont_damage_shooter="0"
     on_collision_die="0"
 	  damage="0"
-    damage_every_x_frames="60"
+    damage_every_x_frames="5"
     lifetime="425" >
   </ProjectileComponent>
   <LuaComponent
 	script_source_file="mods/d-wonders/files/scripts/projectiles/shootingstar.lua"
-	execute_every_n_frame="10"
+	execute_every_n_frame="3"
 	>
   </LuaComponent>
   <ParticleEmitterComponent

@@ -5,12 +5,18 @@
     <VelocityComponent>
     	</VelocityComponent>
   </Base>
+  <HomingComponent
+    homing_targeting_coeff="60.0"
+		homing_velocity_multiplier="0.9"
+		detect_distance="40"
+	>
+	</HomingComponent>
   <ProjectileComponent
     _enabled="1"
   	lob_min="0.8"
   	lob_max="1.0"
-    speed_min="400"
-    speed_max="500"
+    speed_min="500"
+    speed_max="600"
     die_on_low_velocity="0"
     on_death_explode="1"
     on_death_gfx_leave_sprite="0"
@@ -22,9 +28,9 @@
     shoot_light_flash_g="50"
     shoot_light_flash_b="255"
     collide_with_world="0"
-	  damage="0.3"
+	  damage="2"
     lifetime_randomness="20"
-    lifetime="60" >
+    lifetime="100" >
     <config_explosion
       never_cache="1"
       camera_shake="0"
@@ -126,7 +132,7 @@
     aabb_min.y="-11"
     aabb_max.x="11"
     aabb_max.y="11"
-    damage_per_frame="0.08"
+    damage_per_frame="0.12"
     update_every_n_frame="1"
     entities_with_tag="enemy"
     damage_type="DAMAGE_ICE"
@@ -137,6 +143,12 @@
 	event_name="player/pick_gold_sand"
 	auto_play="1">
   </AudioLoopComponent>
+  <LightComponent _enabled="1"
+                    r="0"
+                    g="0"
+                    b="255"
+                    radius="40">
+  </LightComponent>
   <VariableStorageComponent
 		name="projectile_file"
 		value_string="mods/d-wonders/files/entities/projectiles/deck/shootingstar_medium_blue.xml"
