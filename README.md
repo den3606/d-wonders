@@ -1,5 +1,7 @@
 # D Wonders
 
+![preview_image](./workshop_preview_image.png)
+
 Original Spells MOD made by Den.
 
 Contributing is welcome. 
