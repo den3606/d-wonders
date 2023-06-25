@@ -1,7 +1,7 @@
 local projectile_entity_id = GetUpdatedEntityID()
 
 local before_x, before_y = EntityGetTransform(projectile_entity_id)
-local enemy_entity_ids = EntityGetInRadiusWithTag(before_x, before_y, 70, "enemy")
+local enemy_entity_ids = EntityGetInRadiusWithTag(before_x, before_y, 85, "enemy")
 
 if enemy_entity_ids[1] == nil then
   return
