@@ -923,9 +923,9 @@ local original_actions = {{
       end
     end
 
-    if 0 < c.damage_healing_add and c.damage_healing_add < 0.2 then
+    if -0.2 < c.damage_healing_add and c.damage_healing_add < 0 then
       add_projectile("data/entities/projectiles/deck/heal_bullet.xml")
-    elseif 0.2 <= c.damage_slice_add and c.damage_slice_add < 0.4 then
+    elseif c.damage_slice_add <= -0.2 then
       add_projectile("data/entities/projectiles/deck/regeneration_field.xml")
     end
 
