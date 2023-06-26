@@ -1,9 +1,11 @@
 # Spoilers(v1.0.1)
 
-========================================
+---
+
 This text translated by DeepL, so Maybe there is a mistake.
 If you find misses, Please tell me.
-========================================
+
+---
 
 This is a spoilers section on d-wonders' spelling specifications that should be noted.
 Please note that not everything is written in detail.
