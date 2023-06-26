@@ -1,6 +1,6 @@
 <Mod
 	name="d-wonders"
-  tags=""
+  tags="gameplay,spells"
   dont_upload_folders="resources,debug"
   dont_upload_files=".editorconfig"
 >
