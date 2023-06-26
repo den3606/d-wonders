@@ -19,7 +19,7 @@
 			explosion_sprite="data/particles/explosion_032_slime.xml"
 			load_this_entity="data/entities/particles/particle_explosion/main_green_small.xml"
 			audio_event_name="explosions/tnt"
-			max_durability_to_destroy="5"
+			max_durability_to_destroy="11"
 			>
 		</config_explosion>
     </ProjectileComponent>
