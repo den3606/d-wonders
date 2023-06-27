@@ -1334,9 +1334,6 @@ local original_actions = {{
     draw_actions(1, true)
   end,
 }}
-print('====================================================')
-print('There are ' .. #original_actions .. ' spells of d-wonders')
-print('====================================================')
 
 for _, action in ipairs(original_actions) do
   table.insert(actions, action)
