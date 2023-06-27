@@ -52,7 +52,7 @@
 		count_min="1"
 		count_max="1"
 		is_trail="1"
-		trail_gap="2.5"
+		trail_gap="5.5"
 		lifetime_min="0.1"
 		lifetime_max="1.3"
 		render_on_grid="1"
@@ -63,7 +63,7 @@
 		is_emitting="1" >
 	</ParticleEmitterComponent>
   <ParticleEmitterComponent
-		emitted_material_name="blood_fading_slow"
+		emitted_material_name="blood"
 		count_min="1"
 		count_max="2"
 		offset.x="-1"
@@ -75,11 +75,11 @@
 		count_min="1"
 		count_max="1"
 		is_trail="1"
-		trail_gap="2.5"
+		trail_gap="5"
 		lifetime_min="0.1"
 		lifetime_max="1.3"
 		render_on_grid="1"
-		create_real_particles="0"
+		create_real_particles="1"
 		emit_cosmetic_particles="1"
 		emission_interval_min_frames="1"
 		emission_interval_max_frames="1"
