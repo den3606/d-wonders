@@ -1,4 +1,4 @@
-dofile_once("mods/twitch-point-integration/files/scripts/lib/utilities.lua")
+dofile_once("mods/d-wonders/files/scripts/lib/utilities.lua")
 
 local projectile_entity_id = GetUpdatedEntityID()
 if not EntityHasTag(projectile_entity_id, "dw_hemokinesis") then

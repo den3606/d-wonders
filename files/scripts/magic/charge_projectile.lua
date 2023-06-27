@@ -1,5 +1,3 @@
-dofile_once("mods/twitch-point-integration/files/scripts/lib/utilities.lua")
-
 local projectile_entity_id = GetUpdatedEntityID()
 if not EntityHasTag(projectile_entity_id, "dw_charge_projectile") then
   return
