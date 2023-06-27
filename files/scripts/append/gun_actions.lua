@@ -764,6 +764,23 @@ local original_actions = {{
     c.fire_rate_wait = c.fire_rate_wait + 20
   end,
 }, {
+  id = "DW_ATTACK_HELICOPTER",
+  name = "$action_dw_attack_helicopter",
+  description = "$actiondesc_dw_attack_helicopter",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/attack_helicopter.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/attack_helicopter.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "2,3,4,5",
+  spawn_probability = "0.4,0.7,0.8,1",
+  price = 180,
+  mana = 180,
+  max_uses = 20,
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/attack_helicopter.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 30
+    current_reload_time = current_reload_time + 15
+  end,
+}, {
   id = "DW_DEPENDENT_BOLT",
   name = "$action_dw_dependent_bolt",
   description = "$actiondesc_dw_dependent_bolt",
@@ -777,7 +794,7 @@ local original_actions = {{
   mana = 40,
   action = function()
     c.fire_rate_wait = c.fire_rate_wait + 30
-    current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE + 10
+    current_reload_time = current_reload_time + 10
     c.spread_degrees = c.spread_degrees + 5
 
     if 0 < c.damage_melee_add then
