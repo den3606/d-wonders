@@ -5,7 +5,7 @@
 Original Spells MOD made by Den.
 
 Contributing is welcome.
-Please contact us via Issue, etc.
+Please contact me via Issue, etc.
 
 ## LICENSE
 
