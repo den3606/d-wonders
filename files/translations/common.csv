@@ -117,6 +117,7 @@ actiondesc_dw_decrease_draw_infinity,Decrease wand spells/casts as much as possi
 action_dw_spell_vacuum,Spell vacuum,,,,,,,,真空咒,スペルバキューム,,,,,
 actiondesc_dw_spell_vacuum,Ability to extract effects from the next projectile,,,,,,,,吸出下一个投射物的效果,次に読む放射物から効果を吸い出す,,,,,
 item_cannon_ball,Cannon ball,,,,,,,,加农炮炮弹,砲弾,,,,,
+action_dw_shark_lancher_death,Shark food,,,,,,,,鲨鱼诱饵,サメの餌,,,,,
 dw_lucky_contract,"You are lucky. Payment was waived",,,,,,,,"你很幸运，不需要付钱",運がいいことに、支払いを免れました！,,,,,
 dw_overpayment_dead,Death due to shortfall in gold,,,,,,,,因为缺钱而死,資金ショートにより甲が乙しました,,,,,
 dw_overbleeding_dead,Heavy bleeding,,,,,,,,大出血,出血多量,,,,,
