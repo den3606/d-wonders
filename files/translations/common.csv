@@ -81,7 +81,7 @@ actiondesc_dw_bomb_plane,Summon a plane that drops bombs,,,,,,,,,爆弾を投下
 action_dw_attack_plane,Attack plane,,,,,,,,,攻撃機,,,,,
 actiondesc_dw_attack_plane,Summon a plane to attacks with a minigun,,,,,,,,,ミニガンで攻撃する飛行機を召喚する,,,,,
 action_dw_attack_helicopter,Attack helicopter,,,,,,,,,攻撃ヘリ,,,,,
-actiondesc_dw_attack_helicopter,english,,,,,,,,,japanese,,,,,
+actiondesc_dw_attack_helicopter,Summon a helicopter to fire missiles,,,,,,,,,ミサイルを発射するヘリを召喚する,,,,,
 action_dw_dependent_bolt,Dependent bolt,,,,,,,,,依存性のボルト,,,,,
 actiondesc_dw_dependent_bolt,Projectiles dependent on the attribute of the spell,,,,,,,,,呪文の属性に依存する放射物,,,,,
 action_dw_soul_shot,Soul shot,,,,,,,,,ソウルショット,,,,,
