@@ -26,10 +26,9 @@
   	shoot_light_flash_radius="64"
   	hit_particle_force_multiplier="0.1"
     bounces_left="0"
-  	damage="0.15"
-	go_through_this_material="aluminium_robot"
-	muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_medium.xml"
-	knockback_force="0.4"
+  	damage="0.2"
+    muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_medium.xml"
+    knockback_force="0.4"
 	>
     <config_explosion
       never_cache="1"
