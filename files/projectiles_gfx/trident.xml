@@ -1,0 +1,15 @@
+<Sprite
+	filename="mods/d-wonders/files/projectiles_gfx/trident.png"
+	offset_x="15"
+	offset_y="5"
+	>
+  <RectAnimation
+	name="default"
+	frame_count="1"
+	frame_width="25"
+	frame_height="9"
+	frame_wait="0.2"
+	frames_per_row="1"
+	loop="0"  >
+  </RectAnimation>
+</Sprite>

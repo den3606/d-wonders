@@ -990,6 +990,24 @@ local original_actions = {{
     c.spread_degrees = c.spread_degrees + 10
   end,
 }, {
+  id = "DW_TRIDENT",
+  name = "$action_dw_trident",
+  description = "$actiondesc_dw_trident",
+  sprite = "mods/d-wonders/files/ui_gfx/gun_actions/trident.png",
+  related_projectiles = {"mods/d-wonders/files/entities/projectiles/deck/trident.xml"},
+  type = ACTION_TYPE_PROJECTILE,
+  spawn_level = "1,2,3,4,5",
+  spawn_probability = "0.7,0.7,0.6,0.6,0.4",
+  price = 150,
+  mana = 60,
+  max_uses = 20,
+  custom_xml_file = "mods/d-wonders/files/entities/misc/custom_cards/trident.xml",
+  action = function()
+    add_projectile("mods/d-wonders/files/entities/projectiles/deck/trident.xml")
+    c.fire_rate_wait = c.fire_rate_wait + 30
+    current_reload_time = current_reload_time + 15
+  end,
+}, {
   id = "DW_SHOOTINGSTAR",
   name = "$action_dw_shootingstar",
   description = "$actiondesc_dw_shootingstar",
