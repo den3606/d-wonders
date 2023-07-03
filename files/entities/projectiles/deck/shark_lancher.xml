@@ -124,7 +124,7 @@
 		update_every_n_frame="1"
 		entities_with_tag="hittable"
 		damage_type="DAMAGE_MELEE"
-		death_cause="$action_worm_shot"
+		death_cause="$dw_shark_lancher_death"
 		_enabled="1"
 		>
 	</AreaDamageComponent>
@@ -138,7 +138,7 @@
 		update_every_n_frame="1"
 		entities_with_tag="player_unit"
 		damage_type="DAMAGE_MELEE"
-		death_cause="$action_worm_shot"
+		death_cause="$dw_shark_lancher_death"
 		_enabled="1"
 		>
 	</AreaDamageComponent>

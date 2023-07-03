@@ -45,7 +45,7 @@
   </LuaComponent>
   <LuaComponent
     script_source_file="mods/d-wonders/files/scripts/projectiles/attack_plane_minigun.lua"
-    execute_every_n_frame="3"
+    execute_every_n_frame="2"
   >
   </LuaComponent>
   <VariableStorageComponent

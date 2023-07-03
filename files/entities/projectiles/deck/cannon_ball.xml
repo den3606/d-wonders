@@ -49,7 +49,7 @@
   ></SpriteComponent>
   <UIInfoComponent
     _tags="enabled_in_world"
-    name="$item_cannon_ball">
+    name="$dw_item_cannon_ball">
   </UIInfoComponent>
   <DamageModelComponent
     air_needed="0"
