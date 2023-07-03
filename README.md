@@ -15,7 +15,7 @@ Please contact me via Issue, etc.
 
 ## Versioning Rule
 
-v<major>.<minor>.<patch>
+`v<major>.<minor>.<patch>`
 
 - major
   - add new content
