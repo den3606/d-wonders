@@ -983,7 +983,7 @@ local original_actions = {{
   spawn_probability = "1,1,1,1,1",
   price = 200,
   mana = 150,
-  max_uses = 7,
+  max_uses = 5,
   never_unlimited = true,
   action = function()
     add_projectile("mods/d-wonders/files/entities/projectiles/deck/shootingstar_origin.xml")
