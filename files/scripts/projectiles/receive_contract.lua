@@ -9,7 +9,7 @@ local function payment(shooter_entity_id, colliding_entity_id)
   end
 
   local hp = ComponentGetValue2(damage_model_component_id, "hp")
-  local payment_gold = math.ceil(hp / 0.4)
+  local payment_gold = math.ceil(hp / 0.2)
   if payment_gold >= 100 then
     payment_gold = 100
   end
