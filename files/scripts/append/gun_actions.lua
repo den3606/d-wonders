@@ -261,7 +261,7 @@ local original_actions = {{
   spawn_level = "1,2,3,4,5",
   spawn_probability = "0.5,0.8,1,1,1",
   price = 120,
-  mana = 40,
+  mana = 20,
   action = function()
     add_projectile("mods/d-wonders/files/entities/projectiles/deck/laser_bolt.xml")
     c.fire_rate_wait = c.fire_rate_wait + 25
