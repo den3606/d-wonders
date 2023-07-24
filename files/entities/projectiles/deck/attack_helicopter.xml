@@ -1,0 +1,34 @@
+<Entity tags="mortal,prey,hittable,projectile_player" name="$projectile_default">
+  <Base file="mods/d-wonders/files/entities/projectiles/base_plane.xml" >
+    <VelocityComponent
+			gravity_y="-10"
+			air_friction="2"
+			mass="3"
+    >
+		</VelocityComponent>
+  </Base>
+  <SpriteComponent
+      _enabled="1"
+      alpha="1"
+      image_file="mods/d-wonders/files/projectiles_gfx/attack_helicopter.xml"
+      next_rect_animation=""
+      rect_animation=""
+    >
+  </SpriteComponent>
+  <LuaComponent
+    script_source_file="mods/d-wonders/files/scripts/projectiles/attack_helicopter_descent.lua"
+    execute_every_n_frame="120"
+    remove_after_executed="1"
+  >
+  </LuaComponent>
+  <LuaComponent
+    script_source_file="mods/d-wonders/files/scripts/projectiles/attack_helicopter_missile.lua"
+    execute_every_n_frame="20"
+  >
+  </LuaComponent>
+  <VariableStorageComponent
+		name="projectile_file"
+		value_string="mods/d-wonders/files/entities/projectiles/deck/attack_helicopter.xml"
+  >
+	</VariableStorageComponent>
+</Entity>
