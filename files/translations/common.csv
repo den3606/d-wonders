@@ -87,7 +87,7 @@ actiondesc_dw_dependent_bolt,Projectiles dependent on the attribute of the spell
 action_dw_soul_shot,Soul shot,,,,,,,,灵魂射击,ソウルショット,,,,,
 actiondesc_dw_soul_shot,"Projectiles that convert the souls of defeated enemies into power",,,,,,,,将击败的敌人的转换为灵魂之力,倒した敵の魂をパワーに変換する放射物,,,,,
 action_dw_trident,Trident,,,,,,,,,トライデント,,,,,
-actiondesc_dw_trident,Trident spear that can be reused after an attack,,,,,,,,,攻撃後に再利用できる三叉の槍,,,,,
+actiondesc_dw_trident,Trident spear that may be reused after an attack,,,,,,,,,攻撃後に回収できるかもしれない三叉の槍,,,,,
 action_dw_remote_bomb_controller,Remote Controll Bomb,,,,,,,,远程炸弹起爆器,起爆用リモコン,,,,,
 actiondesc_dw_remote_bomb_controller,Remote detonation of remote-controlled bombs,,,,,,,,远程控制炸弹的起爆器,リモコン爆弾を遠隔で起爆できる,,,,,
 action_dw_shootingstar,Shooting star,,,,,,,,流星雨,シューティングスター,,,,,
